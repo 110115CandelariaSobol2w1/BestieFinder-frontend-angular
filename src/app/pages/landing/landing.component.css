@@ -1,0 +1,113 @@
+element.style {
+  height: 500px;
+  margin-bottom: 150px;
+}
+div{
+  display: inline-block;
+}
+section{
+  width: 100%;
+  justify-content: center;
+}
+#promo {
+  text-align: center;
+  padding: 40px;
+  width: 100%;
+  background: url(src/assets/perro-gato.png);
+  background-size: cover;
+  background-position: center;
+}
+/* @media (min-width:768px) {
+  .text-md-center {
+    text-align: center!important;
+  }
+}
+@media (min-width:576px) {
+  .text-sm-start {
+    text-align: left!important;
+  }
+} */
+.text-center {
+  text-align: center!important;
+}
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+.h1, h1 {
+  font-size: calc(1.375rem + 1.5vw);
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+  font-family: Montserrat,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--bs-heading-color);
+}
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+#wellcome p {
+  max-width: 800px;
+  font-size: 20px;
+  margin: auto;
+}
+element.style {
+  margin-top: 20px;
+  margin-right: 0px;
+  margin-left: 0px;
+  /*background: linear-gradient(var(--bs-pink) 0%, var(--bs-danger-bg-subtle) 2%);*/
+  position: relative;
+  display: block;
+  overflow: visible;
+  /*max-width: 100%;*/
+  /*widh: 100%;*/
+  background: #f9f9fc;
+}
+#why {
+  background-color: #fff7fd;
+  max-width: 100%;
+  
+}
+.text-center {
+  text-align: center!important;
+}
+/* @media (min-width:768px) {
+  .container, .container-md, .container-sm {
+    max-width: 720px;
+  }
+}
+@media (min-width:576px) {
+  .container, .container-sm {
+    max-width: 540px;
+  }
+} */
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * .5);
+  padding-left: calc(var(--bs-gutter-x) * .5);
+  margin-right: auto;
+  margin-left: auto;
+}
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+svg {
+  color: #b6c4ff;
+}
+svg {
+  font-size: 42px;
+}
+img, svg {
+  vertical-align: middle;
+}
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+.item {
+  height: 150px;
+}
+

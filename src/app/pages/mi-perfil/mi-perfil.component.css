@@ -1,0 +1,27 @@
+.anone:active {
+    color: inherit;
+  }
+  
+  .anone:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .anone:visited {
+    color: inherit;
+  }
+  
+  .anone:link {
+    text-decoration: none;
+  }
+  
+  a:hover {
+    --bs-link-color-rgb: var(--bs-link-hover-color-rgb);
+  }
+  
+  .anone {
+    color: inherit;
+  }
+  
+  
+  

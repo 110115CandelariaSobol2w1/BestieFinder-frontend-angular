@@ -1,0 +1,20 @@
+.navbar {
+  background-color: #f9f9fc;
+    font-family: Montserrat,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  }
+  
+  @media (min-width:768px) {
+    .navbar-expand-md {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+    }
+  }
+  
+  #logo {
+    max-height: 42px;
+    margin-right: 18px;
+    margin-top: -3px;
+    display: inline-block;
+  }
+  
+      
