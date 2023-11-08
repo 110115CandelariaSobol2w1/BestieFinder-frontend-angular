@@ -15,21 +15,32 @@ export class AuthService {
   );
   currentUser: Observable<Login> = this.currentUserSubject.asObservable();
 
+  
   constructor(private http: HttpClient) {
     console.log('Servicio de Autenticación está corriendo');
   }
-
+  
   iniciarSesion(login: Login): Observable<any> {
     return this.http.post(this.url, login).pipe(
-      map(data => {
+      map((data) => {
         const userData = data as Login; // Realiza una conversión explícita
         sessionStorage.setItem('currentUser', JSON.stringify(userData));
         this.currentUserSubject.next(userData);
         this.loggedIn.next(true);
         return userData;
       })
-    );
-  }
-  
+      );
+    }
+    
+    logout(): void {
+      localStorage.removeItem('currentUser');
+      this.loggedIn.next(false);
+    }
+    
+    get usuarioAutenticado(): Login {
+      return this.currentUserSubject.value;
+    }
+    get estaAutenticado(): Observable<boolean> {
+      return this.loggedIn.asObservable();
+    }
 }
-
