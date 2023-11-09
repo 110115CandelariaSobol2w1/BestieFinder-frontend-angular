@@ -9,38 +9,47 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
   url: string = 'http://localhost:3000/auth/login';
+  currentUserSubject: BehaviorSubject<Login>;
+  currentUser: Observable<Login>;
   loggedIn = new BehaviorSubject<boolean>(false);
-  currentUserSubject: BehaviorSubject<Login> = new BehaviorSubject<Login>(
-    JSON.parse(localStorage.getItem('currentUser') || '{}')
-  );
-  currentUser: Observable<Login> = this.currentUserSubject.asObservable();
 
-  
   constructor(private http: HttpClient) {
-    console.log('Servicio de Autenticación está corriendo');
+    console.log('Servicio de Atuenticación está corriendo');
+    this.currentUserSubject = new BehaviorSubject<Login>(
+      JSON.parse(localStorage.getItem('currentUser') || '{}')
+    );
+    this.currentUser = this.currentUserSubject.asObservable();
   }
-  
+
   iniciarSesion(login: Login): Observable<any> {
-    return this.http.post(this.url, login).pipe(
+    //console.log(login)
+    return this.http.post<any>(this.url, login).pipe(
       map((data) => {
-        const userData = data as Login; // Realiza una conversión explícita
-        sessionStorage.setItem('currentUser', JSON.stringify(userData));
-        this.currentUserSubject.next(userData);
+        localStorage.setItem('currentUser', JSON.stringify(data.token));
+
+        this.currentUserSubject.next(data);
         this.loggedIn.next(true);
-        return userData;
+        console.log(localStorage.getItem('currentUser'))
+
+        return {
+          success: 'login correcto',
+          token: data.token
+        }
+
       })
-      );
-    }
-    
-    logout(): void {
-      localStorage.removeItem('currentUser');
-      this.loggedIn.next(false);
-    }
-    
-    get usuarioAutenticado(): Login {
-      return this.currentUserSubject.value;
-    }
-    get estaAutenticado(): Observable<boolean> {
-      return this.loggedIn.asObservable();
-    }
+    );
+  }
+
+  logout(): void {
+    localStorage.removeItem('currentUser');
+    this.loggedIn.next(false);
+  }
+
+  get usuarioAutenticado(): Login {
+    return this.currentUserSubject.value;
+  }
+
+  get estaAutenticado(): Observable<boolean> {
+    return this.loggedIn.asObservable();
+  }
 }

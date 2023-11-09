@@ -5,53 +5,45 @@
         </div>
         <div class="row" style="margin-right: 0px;margin-left: 0px;">
             <div class="col text-center">
-                <h1 style="color: rgb(255,126,183);">Maria Candelaria Sobol</h1>
+                <h1 style="color: rgb(255,126,183);">{{usuario.data.nombre}} {{usuario.data.apellido}}</h1>
             </div>
         </div>
         <div class="row justify-content-center" style="margin-right: 0px;margin-left: 0px;margin-top: 10px;">
             <div class="col-sm-6 col-lg-4" style="padding-right: 0px;padding-left: 0px;">
-                <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="assets/1683338381655.jpg">
+                <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" [src]="'data:image/jpeg;base64,' + usuario.data.photo">
                     <div class="card-body info">
                         <div class="row" style="margin-top: -24px;">
                             <div class="col-md-12" style="margin-top: 22px;">
                                 <div class="row">
                                     <div class="col">
-                                        <p class="labels"><strong>Usuario</strong></p>
+                                        <p class="labels"><strong>Nombre</strong></p>
                                     </div>
                                     <div class="col">
-                                        <p class="labels">Maria Candelaria Sobol</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <p class="labels"><strong>Teléfono</strong></p>
-                                    </div>
-                                    <div class="col">
-                                        <p class="labels">3541378490</p>
+                                        <p class="labels">{{usuario.data.nombre}}</p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <p class="labels"><strong>País</strong></p>
+                                        <p class="labels"><strong>Apellido</strong></p>
                                     </div>
                                     <div class="col">
-                                        <p class="labels">Argentina</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <p class="labels"><strong>Provincia</strong></p>
-                                    </div>
-                                    <div class="col">
-                                        <p class="labels">Cordoba</p>
+                                        <p class="labels">{{usuario.data.apellido}}</p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <p class="labels"><strong>Ciudad</strong></p>
+                                        <p class="labels"><strong>Email</strong></p>
                                     </div>
                                     <div class="col">
-                                        <p class="labels">Villa Carlos Paz</p>
+                                        <p class="labels">{{usuario.data.email}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="labels"><strong>Telefono</strong></p>
+                                    </div>
+                                    <div class="col">
+                                        <p class="labels">{{usuario.data.telefono}}</p>
                                     </div>
                                 </div>
                                 <div class="row">

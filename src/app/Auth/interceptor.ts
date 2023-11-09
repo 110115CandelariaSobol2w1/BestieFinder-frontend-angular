@@ -14,24 +14,25 @@ import { Observable } from 'rxjs';
   export class JwtInterceptor implements HttpInterceptor {
     constructor(private authService: AuthService) {}
   
-    intercept(
-      req: HttpRequest<any>,
-      next: HttpHandler
-    ): Observable<HttpEvent<any>> {
-      const userDataString = sessionStorage.getItem('currentUser');
-      const userData = userDataString ? JSON.parse(userDataString) : null;
-      const token = userData && userData.token;
-  
-      if (token) {
-        req = req.clone({
-          setHeaders: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+
+    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+      const currentUser = this.authService.usuarioAutenticado;
+      if (currentUser && currentUser) {
+      req = req.clone({
+      setHeaders: {
+      Authorization: `Bearer ${currentUser}`
       }
-      console.log('INTERCEPTOR: ' + token);
+      });
+      }
+      console.log("INTERCEPTOR: " + currentUser);
       return next.handle(req);
-    }
+      }
+      
+
+    
+
+    
+      
   }
   
   

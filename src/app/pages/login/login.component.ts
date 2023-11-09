@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
       let email: string = this.form.get('email')?.value;
       let password: string = this.form.get('password')?.value;
       let login: Login = new Login(email, password);
-      console.log(email, password);
+      //console.log(email, password);
 
       //   this.myService.iniciarSesion(login).subscribe(
       //     (respuesta) => {
