@@ -14,7 +14,8 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http'
 import { ReactiveFormsModule } from '@angular/forms';
 import { JwtInterceptor } from './Auth/interceptor';
 import { AuthService } from './services/auth.service';
-import { VerMascotasComponent } from './pages/ver-mascotas/ver-mascotas.component';
+import { VerMascotasComponent } from './pages/ver-mascotas-adopcion/ver-mascotas.component';
+import { VerPerrosComponent } from './pages/ver-perros/ver-perros.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { VerMascotasComponent } from './pages/ver-mascotas/ver-mascotas.componen
     SignupComponent,
     MiPerfilComponent,
     EditarPerfilComponent,
-    VerMascotasComponent
+    VerMascotasComponent,
+    VerPerrosComponent
   ],
   imports: [
     BrowserModule,

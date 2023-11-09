@@ -52,4 +52,8 @@ export class SignupComponent implements OnInit {
       });
     }
   }
+
+  redireccionLogin(){
+    this.router.navigate(['/iniciar-sesion']);
+  }
 }

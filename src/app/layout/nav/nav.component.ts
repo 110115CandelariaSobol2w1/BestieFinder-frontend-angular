@@ -18,4 +18,8 @@ export class NavComponent implements OnInit {
     return this.authService.estaAutenticado;
   }
 
+  logout(){
+    return this.authService.logout;
+  }
+
 }
