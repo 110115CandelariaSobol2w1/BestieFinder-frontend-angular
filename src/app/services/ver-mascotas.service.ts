@@ -9,7 +9,7 @@ export class VerMascotasService {
 
   constructor(private http:HttpClient) { }
 
-  obtenerMascotas():Observable<any>{
-    return this.http.get('http://localhost:3000/animales');
+  obtenerMascotasAdopcion():Observable<any>{
+    return this.http.get('http://localhost:3000/publicaciones/byEstado/4');
   }
 }

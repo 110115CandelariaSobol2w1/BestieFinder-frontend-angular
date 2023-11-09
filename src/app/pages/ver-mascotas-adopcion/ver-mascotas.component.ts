@@ -13,7 +13,7 @@ export class VerMascotasComponent implements OnInit {
   constructor(private myService: VerMascotasService) { }
 
   ngOnInit(): void {
-    this.myService.obtenerMascotas().subscribe(data => {
+    this.myService.obtenerMascotasAdopcion().subscribe(data => {
       console.log(data);
       this.mascotas = data.data;
     })

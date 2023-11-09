@@ -3,13 +3,13 @@
 </div>
   <div class="container">
     <h1 class="text-center d-flex justify-content-center align-items-center" style="color: rgb(255,126,183);display: none;position: relative;font-weight: bold;text-align: center;margin-top: 15px;">
-        Animales</h1>
+        Animales en adopcion</h1>
 </div>
 <div class="row product-list">
     <div *ngFor="let mascota of mascotas" class="col-sm-6 col-md-4 product-item" style="margin: 20px; border: #b6c4ff;">
         <div class="product-container">
             <div class="row">
-                <div class="col-md-12"><a class="product-image" href="#"><img style="height: 130px;" [src]="'data:image/jpeg;base64,' + mascota.animal_photo"></a></div>
+                <div class="col-md-12"><a class="product-image" href="#"><img style="height: 130px;" [src]="'data:image/jpeg;base64,' + mascota.animal.animal_photo"></a></div>
             </div>
             <div class="row">
                 <div class="col-8">
@@ -23,11 +23,11 @@
                         <div class="col-6"><button class="btn btn-light" type="button" style="background: linear-gradient(#ff7eb7, #b6c4ff);color: black;margin-bottom: 10px;">Adoptar!</button></div>
                     </div>
                     <ul>
-                        <li>Raza: {{ mascota.animal_raza }}</li>
-                        <li>Edad: {{ mascota.animal_edad }}</li>
-                        <li>Sexo: {{ mascota.animal_sexo }}</li>
-                        <li>Color: {{ mascota.animal_color }}</li>
-                        <li>Descripción: {{ mascota.animal_descripcion }}</li>
+                        <li>Raza: {{ mascota.animal.animal_raza }}</li>
+                        <li>Edad: {{ mascota.animal.animal_edad }}</li>
+                        <li>Sexo: {{ mascota.animal.animal_sexo }}</li>
+                        <li>Color: {{ mascota.animal.animal_color }}</li>
+                        <li>Descripción: {{ mascota.animal.animal_descripcion }}</li>
                     </ul>
                 </div>
             </div>
