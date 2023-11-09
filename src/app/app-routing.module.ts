@@ -7,6 +7,7 @@ import { MiPerfilComponent } from './pages/mi-perfil/mi-perfil.component';
 import { EditarPerfilComponent } from './pages/editar-perfil/editar-perfil.component';
 import { VerMascotasComponent } from './pages/ver-mascotas-adopcion/ver-mascotas.component';
 import { VerPerrosComponent } from './pages/ver-perros/ver-perros.component';
+import { VerPerrosAdopcionComponent } from './pages/ver-perros-adopcion/ver-perros-adopcion.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path:'perfil', component: MiPerfilComponent},
   {path: 'editar-perfil', component: EditarPerfilComponent},
   {path: 'ver-mascotas', component: VerMascotasComponent},
-  {path: 'ver-perros', component: VerPerrosComponent}
+  {path: 'ver-perros', component: VerPerrosComponent},
+  {path: 'ver-perros-adopcion', component: VerPerrosAdopcionComponent}
 ];
 
 @NgModule({

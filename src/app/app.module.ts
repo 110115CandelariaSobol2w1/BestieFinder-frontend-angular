@@ -16,6 +16,7 @@ import { JwtInterceptor } from './Auth/interceptor';
 import { AuthService } from './services/auth.service';
 import { VerMascotasComponent } from './pages/ver-mascotas-adopcion/ver-mascotas.component';
 import { VerPerrosComponent } from './pages/ver-perros/ver-perros.component';
+import { VerPerrosAdopcionComponent } from './pages/ver-perros-adopcion/ver-perros-adopcion.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { VerPerrosComponent } from './pages/ver-perros/ver-perros.component';
     MiPerfilComponent,
     EditarPerfilComponent,
     VerMascotasComponent,
-    VerPerrosComponent
+    VerPerrosComponent,
+    VerPerrosAdopcionComponent
   ],
   imports: [
     BrowserModule,
