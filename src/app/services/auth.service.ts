@@ -29,7 +29,6 @@ export class AuthService {
 
         this.currentUserSubject.next(data);
         this.loggedIn.next(true);
-        console.log(localStorage.getItem('currentUser'))
 
         return {
           success: 'login correcto',

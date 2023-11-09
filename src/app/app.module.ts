@@ -13,6 +13,7 @@ import { EditarPerfilComponent } from './pages/editar-perfil/editar-perfil.compo
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http'
 import { ReactiveFormsModule } from '@angular/forms';
 import { JwtInterceptor } from './Auth/interceptor';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { JwtInterceptor } from './Auth/interceptor';
     HttpClientModule,
     ReactiveFormsModule,
   ],
-  providers: [
+  providers: [AuthService,
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi:true}
   ],
   bootstrap: [AppComponent]
