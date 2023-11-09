@@ -14,6 +14,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http'
 import { ReactiveFormsModule } from '@angular/forms';
 import { JwtInterceptor } from './Auth/interceptor';
 import { AuthService } from './services/auth.service';
+import { VerMascotasComponent } from './pages/ver-mascotas/ver-mascotas.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AuthService } from './services/auth.service';
     LoginComponent,
     SignupComponent,
     MiPerfilComponent,
-    EditarPerfilComponent
+    EditarPerfilComponent,
+    VerMascotasComponent
   ],
   imports: [
     BrowserModule,
