@@ -61,4 +61,8 @@ export class LoginComponent implements OnInit {
       });
     }
   }
+
+  irARegistro() {
+    this.router.navigate(['registro']); // 'registro' debe coincidir con la ruta definida en tu configuración de enrutamiento
+  }
 }

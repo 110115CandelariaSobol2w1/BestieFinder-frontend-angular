@@ -17,6 +17,8 @@ import { AuthService } from './services/auth.service';
 import { VerMascotasComponent } from './pages/ver-mascotas-adopcion/ver-mascotas.component';
 import { VerPerrosComponent } from './pages/ver-perros/ver-perros.component';
 import { VerPerrosAdopcionComponent } from './pages/ver-perros-adopcion/ver-perros-adopcion.component';
+import { VerPerrosPerdidosComponent } from './pages/ver-perros-perdidos/ver-perros-perdidos.component';
+import { VerPerrosEncontradosComponent } from './pages/ver-perros-encontrados/ver-perros-encontrados.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { VerPerrosAdopcionComponent } from './pages/ver-perros-adopcion/ver-perr
     EditarPerfilComponent,
     VerMascotasComponent,
     VerPerrosComponent,
-    VerPerrosAdopcionComponent
+    VerPerrosAdopcionComponent,
+    VerPerrosPerdidosComponent,
+    VerPerrosEncontradosComponent
   ],
   imports: [
     BrowserModule,

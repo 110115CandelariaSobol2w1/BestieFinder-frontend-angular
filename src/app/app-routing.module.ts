@@ -8,6 +8,8 @@ import { EditarPerfilComponent } from './pages/editar-perfil/editar-perfil.compo
 import { VerMascotasComponent } from './pages/ver-mascotas-adopcion/ver-mascotas.component';
 import { VerPerrosComponent } from './pages/ver-perros/ver-perros.component';
 import { VerPerrosAdopcionComponent } from './pages/ver-perros-adopcion/ver-perros-adopcion.component';
+import { VerPerrosPerdidosComponent } from './pages/ver-perros-perdidos/ver-perros-perdidos.component';
+import { VerPerrosEncontradosComponent } from './pages/ver-perros-encontrados/ver-perros-encontrados.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -18,7 +20,9 @@ const routes: Routes = [
   {path: 'editar-perfil', component: EditarPerfilComponent},
   {path: 'ver-mascotas', component: VerMascotasComponent},
   {path: 'ver-perros', component: VerPerrosComponent},
-  {path: 'ver-perros-adopcion', component: VerPerrosAdopcionComponent}
+  {path: 'ver-perros-adopcion', component: VerPerrosAdopcionComponent},
+  {path: 'ver-perros-perdidos', component: VerPerrosPerdidosComponent},
+  {path: 'ver-perros-encontrados', component: VerPerrosEncontradosComponent}
 ];
 
 @NgModule({
