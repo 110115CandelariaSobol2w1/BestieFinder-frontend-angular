@@ -20,6 +20,7 @@ import { VerPerrosAdopcionComponent } from './pages/ver-perros-adopcion/ver-perr
 import { VerPerrosPerdidosComponent } from './pages/ver-perros-perdidos/ver-perros-perdidos.component';
 import { VerPerrosEncontradosComponent } from './pages/ver-perros-encontrados/ver-perros-encontrados.component';
 import { CrearRefugioComponent } from './pages/crear-refugio/crear-refugio.component';
+import { UnirseRefugioComponent } from './pages/unirse-refugio/unirse-refugio.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { CrearRefugioComponent } from './pages/crear-refugio/crear-refugio.compo
     VerPerrosAdopcionComponent,
     VerPerrosPerdidosComponent,
     VerPerrosEncontradosComponent,
-    CrearRefugioComponent
+    CrearRefugioComponent,
+    UnirseRefugioComponent
   ],
   imports: [
     BrowserModule,
