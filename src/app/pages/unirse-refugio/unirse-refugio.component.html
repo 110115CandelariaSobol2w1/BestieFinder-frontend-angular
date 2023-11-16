@@ -20,7 +20,7 @@
                                     <tr>
                                         <td>{{refugio.refugio_nombre}}</td>
                                         <td>{{refugio.refugio_descripcion}}</td>
-                                        <td class="text-center"><button class="btn btn-primary" type="button" style="color: var(--bs-emphasis-color);background: rgb(255,126,183);"><i class="far fa-user"></i></button><a class="del-row" href="javascript:void(0);"></a></td>
+                                        <td class="text-center"><button (click)="unirseRefugio(refugio.refugio_id)" class="btn" type="button" style="color: var(--bs-emphasis-color);background: rgb(255,126,183);"><i class="far fa-user"></i>Enviar Solicitud</button><a class="del-row" href="javascript:void(0);"></a></td>
                                     </tr>
                                 </tbody>
                             </table>
