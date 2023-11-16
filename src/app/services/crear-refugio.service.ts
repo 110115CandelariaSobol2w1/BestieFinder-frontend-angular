@@ -12,6 +12,6 @@ export class CrearRefugioService {
   constructor(private http: HttpClient) { }
 
   crearRefugio(refugio: Refugio): Observable<any>{
-    return this.http.post('http://localhost:3000/refugios', refugio);
+    return this.http.post('http://localhost:3000/refugios/userRefugio', refugio);
   }
 }

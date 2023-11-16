@@ -41,11 +41,12 @@ export class CrearRefugioComponent implements OnInit {
       let telefono: string = this.form.get('telefono')?.value;
       let informacion: string = this.form.get('informacion')?.value;
       let castraciones: boolean = this.form.get('castraciones')?.value;
-      let refugio: Refugio = new Refugio(nombre,pais,provincia,ciudad,telefono,informacion,castraciones);
+      let userRole: string = 'owner';
+      let refugio: Refugio = new Refugio(nombre,pais,provincia,ciudad,telefono,informacion,castraciones,userRole);
 
       this.miServicio.crearRefugio(refugio).subscribe({
         next: (v) => {
-          this.router.navigate(['home']);
+          alert('Refugio registrado correctamente')
         },
         error: (e) => {
           alert('ups hubo un error');
