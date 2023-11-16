@@ -4,44 +4,44 @@
             <p class="text-primary m-0 fw-bold"><span style="color: rgb(255, 126, 183);">Registrar Refugio</span></p>
         </div>
         <div class="card-body">
-            <form>
+            <form [formGroup]="form">
                 <div class="row" style="margin-bottom: 25px;text-align: left;">
                     <div class="col-sm-4 col-md-4 col-lg-3 col-xl-2 col-xxl-2" style="display: inline;text-align: center;margin-bottom: 25px;"><img class="rounded-circle mb-3 mt-4 img-fluid" src="assets/img/dogs/1683338381655.jpg" style="display: inline;max-height: 110px;"><br><button class="btn btn-primary btn-sm" id="photoBtn" type="button" style="background: linear-gradient(#b6c4ff, #ff7bef);color: rgb(0,0,0); border-color: #ff7bef;">Subir Foto</button></div>
                     <div class="col-sm-8 col-md-8 col-lg-9 col-xl-10 col-xxl-10 align-self-center">
                         <div class="row">
                             <div class="col-md-12 text-start">
-                                <div class="mb-3"><label class="form-label" for="email"><strong>Nombre del refugio</strong></label><input class="form-control" type="" id="email" placeholder="Mil patitas" name="email" required=""></div>
+                                <div class="mb-3"><label class="form-label" for="email"><strong>Nombre del refugio</strong></label><input formControlName="nombre" class="form-control" type="" id="email" placeholder="Mil patitas" name="email" required=""></div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 text-start">
-                        <div class="mb-3"><label class="form-label" for="username"><strong>Telefono</strong></label><input class="form-control" type="" id="password" placeholder="011378490"></div>
+                        <div class="mb-3"><label class="form-label" for="username"><strong>Telefono</strong></label><input formControlName="telefono" class="form-control" type="" id="password" placeholder="011378490"></div>
                     </div>
                     <div class="col-md-6 text-start">
-                        <div class="mb-3"><label class="form-label" for="username"><strong>Informacion adicional:</strong></label><input class="form-control" type="" id="verifyPassword" placeholder="Nos dedicamos al rescate de animales"></div>
+                        <div class="mb-3"><label class="form-label" for="username"><strong>Informacion adicional</strong></label><input formControlName="informacion" class="form-control" type="" id="verifyPassword" placeholder="Nos dedicamos al rescate de animales"></div>
                     </div>
                     <div class="col-md-6">
-                        <div class="mb-3"><label class="form-label" for="country"><strong>Pais</strong></label><select class="form-select countries order-alpha limit-pop-1000000 presel-MX group-continents group-order-na" id="countryId" name="country" required=""></select></div>
+                        <div class="mb-3"><label class="form-label" for="username"><strong>Pais</strong></label><input formControlName="pais" class="form-control" type="" id="verifyPassword" placeholder="Argentina"></div>
                     </div>
                     <div class="col-md-6">
-                        <div class="mb-3"><label class="form-label" for="city"><strong>Provincia</strong></label><select class="form-select states order-alpha" id="stateId" name="state" required=""></select></div>
+                        <div class="mb-3"><label class="form-label" for="username"><strong>Provincia</strong></label><input formControlName="provincia" class="form-control" type="" id="verifyPassword" placeholder="Cordoba"></div>
                     </div>
                     <div class="col-md-6">
-                        <div class="mb-3"><label class="form-label" for="city"><strong>Ciudad</strong></label><input class="form-control" type="text" id="cityId" placeholder="Villa Carlos Paz" name="city" required=""></div>
+                        <div class="mb-3"><label class="form-label" for="city"><strong>Ciudad</strong></label><input formControlName="ciudad" class="form-control" type="text" id="cityId" placeholder="Villa Carlos Paz" name="city" required=""></div>
                     </div>
                     <div class="col-md-6">
-                        <div class="mb-3"><label class="form-label" for="address"><strong>Direccion</strong></label><input class="form-control" type="text" placeholder="General paz 196" name="address"></div>
+                        <div class="mb-3"><label class="form-label" for="address"><strong>Direccion</strong></label><input formControlName="direccion" class="form-control" type="text" placeholder="General paz 196" name="address"></div>
                     </div>
                     <div class="col-md-6">
                         <div class="mb-3"><label class="form-label" for="address"><strong>Castraciones</strong></label></div>
-                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-3"><label class="form-check-label" for="formCheck-3">Castraciones a perros y gatos</label></div>
-                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-1"><label class="form-check-label" for="formCheck-1">No realiza castraciones</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" formControlName="castraciones" value="realiza" id="formCheck-3" [checked]="form.get('castraciones')?.value === true" ><label class="form-check-label" for="formCheck-3">Castraciones a perros y gatos</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio" formControlName="castraciones" value="noRealiza" id="formCheck-1" [checked]="form.get('castraciones')?.value === false"><label class="form-check-label" for="formCheck-1">No realiza castraciones</label></div>
                     </div>
                     <div class="col">
                         <p id="emailErrorMsg" class="text-danger" style="display:none;"></p>
                         <p id="passwordErrorMsg" class="text-danger" style="display:none;"></p>
                     </div>
-                    <div class="col-md-12" style="text-align: right;margin-top: 5px;"><button class="btn btn-primary btn-sm" id="submitBtn" type="submit">Guardar cambios</button></div>
+                    <div class="col-md-12" style="text-align: right;margin-top: 5px;"><button (click)="crearRefugio()" class="btn btn-primary btn-sm" id="submitBtn" type="submit">Guardar cambios</button></div>
                 </div>
             </form>
         </div>
