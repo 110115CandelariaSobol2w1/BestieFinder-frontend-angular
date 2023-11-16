@@ -8,9 +8,18 @@ import { VerRefugiosService } from 'src/app/services/ver-refugios.service';
 })
 export class VerRefugioComponent implements OnInit {
 
-  constructor() { }
+  refugio: any;
+  refugioId: number = 1;
+
+  constructor(private myService: VerRefugiosService) { }
 
   ngOnInit(): void {
+    if (this.refugioId) {
+      this.myService.obtenerRefugioPorId(this.refugioId).subscribe(data => {
+        console.log(data);
+        this.refugio = data;
+      });
+    }
   }
 
 }

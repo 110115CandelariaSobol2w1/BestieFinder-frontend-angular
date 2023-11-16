@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -37,5 +37,15 @@ export class VerRefugiosService {
     
 
   }
+
+  obtenerRefugioPorId(refugioId: number): Observable<any> {
+    // Utilizamos la URL con el refugioId incluido
+    const url = `http://localhost:3000/refugios/${refugioId}`;
+
+    // Realizamos la solicitud GET con la URL específica
+    return this.http.get(url);
+  }
+
+
 
 }
