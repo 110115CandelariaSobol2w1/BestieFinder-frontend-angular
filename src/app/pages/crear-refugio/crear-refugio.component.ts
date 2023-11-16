@@ -15,11 +15,11 @@ export class CrearRefugioComponent implements OnInit {
   constructor(private fromBuilder: FormBuilder, private miServicio: CrearRefugioService, private router: Router) {
     this.form = this.fromBuilder.group({
       nombre: [''],
-      telefono: [''],
-      informacion: [''],
       pais: [''],
       provincia: [''],
       ciudad: [''],
+      telefono: [''],
+      informacion: [''],
       castraciones: [''],
     });
 
@@ -35,13 +35,13 @@ export class CrearRefugioComponent implements OnInit {
   crearRefugio(){
     if(this.form.valid){
       let nombre: string = this.form.get('nombre')?.value;
-      let telefono: string = this.form.get('telefono')?.value;
-      let informacion: string = this.form.get('informacion')?.value;
       let pais: string = this.form.get('pais')?.value;
       let provincia: string = this.form.get('provincia')?.value;
       let ciudad: string = this.form.get('ciudad')?.value;
+      let telefono: string = this.form.get('telefono')?.value;
+      let informacion: string = this.form.get('informacion')?.value;
       let castraciones: boolean = this.form.get('castraciones')?.value;
-      let refugio: Refugio = new Refugio(nombre,telefono,informacion,pais,provincia,ciudad,castraciones);
+      let refugio: Refugio = new Refugio(nombre,pais,provincia,ciudad,telefono,informacion,castraciones);
 
       this.miServicio.crearRefugio(refugio).subscribe({
         next: (v) => {

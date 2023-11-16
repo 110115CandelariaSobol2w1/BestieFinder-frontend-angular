@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { VerRefugiosService } from 'src/app/services/ver-refugios.service';
 
 @Component({
   selector: 'app-unirse-refugio',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UnirseRefugioComponent implements OnInit {
 
-  constructor() { }
+  refugios: any[] = [];
+
+  constructor(private myService: VerRefugiosService) { }
 
   ngOnInit(): void {
+    this.myService.obtenerRefugios().subscribe(data => {
+      console.log(data);
+      this.refugios = data.data;
+    })
   }
 
 }
