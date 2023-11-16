@@ -1,0 +1,78 @@
+<div class="container-fluid">
+    <div class="card shadow mb-3">
+        <div class="card-header py-3">
+            <p class="text-primary m-0 fw-bold"><span style="color: rgb(255, 126, 183);">Crear publicacion</span></p>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="form">
+                <div class="row" style="margin-bottom: 25px;text-align: left;">
+                    <div class="col-sm-4 col-md-4 col-lg-3 col-xl-2 col-xxl-2" style="display: inline;text-align: center;margin-bottom: 25px;"><img class="rounded-circle mb-3 mt-4 img-fluid" src="assets/img/dogs/1683338381655.jpg" style="display: inline;max-height: 110px;"><br><button class="btn btn-primary btn-sm" id="photoBtn" type="button" style="background: linear-gradient(#b6c4ff, #ff7bef);color: rgb(0,0,0);border-bottom-style: none;border-bottom-color: rgba(255,126,183,0);">Cargar Foto</button></div>
+                    <div class="col-sm-8 col-md-8 col-lg-9 col-xl-10 col-xxl-10 align-self-center">
+                        <div class="row">
+                            <div class="col-md-12 text-start">
+                                <div class="mb-3"><label class="form-label" for="email"><strong>Nombre del animal</strong></label><input formControlName="animal_name" class="form-control" type="" id="email" placeholder="Firulai" name="email" required=""></div>
+                            </div>
+                            <div class="col-md-12 text-start">
+                                <div class="mb-3"><label class="form-label" for="email"><strong>Raza</strong></label><input formControlName="animal_raza" class="form-control" type="" id="email-1" placeholder="Mestizo" name="email" required=""></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-start">
+                        <div class="mb-3"><label class="form-label" for="username"><strong>Edad</strong></label><input formControlName="animal_edad" class="form-control" type="" id="password" placeholder="5"></div>
+                    </div>
+                    <div class="col-md-6 text-start">
+                        <div class="mb-3"><label class="form-label" for="username"><strong>Color</strong></label><input formControlName="animal_color" class="form-control" type="" id="verifyPassword" placeholder="Marron y blanco"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3"><label class="form-label" for="address"><strong>Sexo</strong></label></div>
+                        <div class="form-check"><input formControlName="animal_sexo" value="macho" [checked]="form.get('animal_sexo')?.value === 'macho'" class="form-check-input" type="radio" id="formCheck-5"><label class="form-check-label" for="formCheck-5">Macho</label></div>
+                        <div class="form-check"><input formControlName="animal_sexo" value="hembra" [checked]="form.get('animal_sexo')?.value === 'hembra'" class="form-check-input" type="radio" id="formCheck-6"><label class="form-check-label" for="formCheck-6">Hembra</label></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3"><label class="form-label" for="username"><strong>Descripcion</strong></label><input formControlName="animal_descripcion" class="form-control" type="" id="verifyPassword" placeholder="Tamaño mediano, cola corta"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3"><label class="form-label" for="username"><strong>Personalidad</strong></label><input formControlName="animal_personalidad" class="form-control" type="" id="verifyPassword" placeholder="Cariñoso y jugueton"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3"><label class="form-label" for="address"><strong>Necesita patio</strong></label></div>
+                        <div class="form-check"><input formControlName="animal_patio" value="si" [checked]="form.get('animal_patio')?.value === true" class="form-check-input" type="radio" id="formCheck-7"><label class="form-check-label" for="formCheck-7">Si</label></div>
+                        <div class="form-check"><input formControlName="animal_patio" value="no" [checked]="form.get('animal_patio')?.value === false" class="form-check-input" type="radio" id="formCheck-8"><label class="form-check-label" for="formCheck-8">No&nbsp;</label></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3"><label class="form-label" for="address"><strong>Estado del animal</strong></label></div>
+                        <div class="form-check"><input formControlName="animal_estado" value="perdido" [checked]="form.get('animal_estado')?.value === 1" class="form-check-input" type="radio" id="formCheck-3"><label  class="form-check-label" for="formCheck-3">Perdido</label></div>
+                        <div class="form-check"><input formControlName="animal_estado" value="encontrado" [checked]="form.get('animal_estado')?.value === 2" class="form-check-input" type="radio" id="formCheck-1"><label  class="form-check-label" for="formCheck-1">Encontrado</label></div>
+                        <div class="form-check"><input formControlName="animal_estado" value="adopcion" [checked]="form.get('animal_estado')?.value === 4" class="form-check-input" type="radio" id="formCheck-9"><label class="form-check-label" for="formCheck-9">En adopcion</label></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3"><label class="form-label" for="address"><strong>Tipo de animal</strong></label></div>
+                        <div class="form-check"><input formControlName="animal_tipo" value="perro" [checked]="form.get('animal_tipo')?.value === 1" class="form-check-input" type="radio" id="formCheck-12"><label class="form-check-label" for="formCheck-12">Perro</label></div>
+                        <div class="form-check"><input formControlName="animal_tipo" value="gato" [checked]="form.get('animal_tipo')?.value === 2" class="form-check-input" type="radio" id="formCheck-13"><label class="form-check-label" for="formCheck-13">Gato</label></div>
+                        <div class="form-check"><input formControlName="animal_tipo" value="ave" [checked]="form.get('animal_tipo')?.value === 3" class="form-check-input" type="radio" id="formCheck-14"><label class="form-check-label" for="formCheck-14">Ave</label></div>
+                        <div class="form-check"><input formControlName="animal_tipo" value="otro" [checked]="form.get('animal_tipo')?.value === 4" class="form-check-input" type="radio" id="formCheck-14"><label class="form-check-label" for="formCheck-14">Otro</label></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3"><label class="form-label" for="address"><strong>Descripcion de la publicacion:</strong></label></div><input formControlName="publicacion_descripcion" class="form-control" type="" id="password-1" placeholder="011378490">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3"><label class="form-label" for="address"><strong>Ubicacion</strong></label></div><input formControlName="publicacion_ubicacion" class="form-control" type="" id="password-3" placeholder="011378490">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3"><label class="form-label" for="address"><strong>Fecha</strong></label></div><input formControlName="publicacion_fecha" class="form-control" type="" id="password-2" placeholder="AAAA-MM-DD">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3"><label class="form-label" for="address"><strong>Foto</strong></label></div><input formControlName="publicacion_photo" class="form-control" type="" id="password-4" placeholder="">
+                    </div>
+                    <div class="col">
+                        <p id="emailErrorMsg" class="text-danger" style="display:none;"></p>
+                        <p id="passwordErrorMsg" class="text-danger" style="display:none;"></p>
+                    </div>
+                    <div class="col-md-12" style="text-align: right;margin-top: 5px;"><button (click)="crearPublicacion()" class="btn btn-primary btn-sm" id="submitBtn" type="submit">Subir publicacion</button></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://geodata.solutions/includes/countrystate.js"></script>

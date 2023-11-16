@@ -13,6 +13,7 @@ import { VerPerrosEncontradosComponent } from './pages/ver-perros-encontrados/ve
 import { CrearRefugioComponent } from './pages/crear-refugio/crear-refugio.component';
 import { UnirseRefugioComponent } from './pages/unirse-refugio/unirse-refugio.component';
 import { VerRefugioComponent } from './pages/ver-refugio/ver-refugio.component';
+import { CrearPublicacionComponent } from './pages/crear-publicacion/crear-publicacion.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -28,7 +29,8 @@ const routes: Routes = [
   {path: 'ver-perros-encontrados', component: VerPerrosEncontradosComponent},
   {path: 'crear-refugio', component: CrearRefugioComponent},
   {path: 'unirse', component: UnirseRefugioComponent},
-  {path: 'ver-refugio', component: VerRefugioComponent}
+  {path: 'ver-refugio', component: VerRefugioComponent},
+  {path: 'crear-publicacion', component: CrearPublicacionComponent}
 ];
 
 @NgModule({
