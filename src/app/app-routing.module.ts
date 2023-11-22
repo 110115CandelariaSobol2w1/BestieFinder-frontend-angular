@@ -17,6 +17,7 @@ import { CrearPublicacionComponent } from './pages/crear-publicacion/crear-publi
 import { MisMascotasComponent } from './pages/mis-mascotas/mis-mascotas.component';
 import { EventosComponent } from './pages/eventos/eventos.component';
 import { VerEventosComponent } from './pages/ver-eventos/ver-eventos.component';
+import { TurnosComponent } from './pages/turnos/turnos.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -36,7 +37,8 @@ const routes: Routes = [
   {path: 'crear-publicacion', component: CrearPublicacionComponent},
   {path: 'mis-mascotas', component: MisMascotasComponent},
   {path: 'eventos', component: EventosComponent},
-  {path: 'ver-eventos', component: VerEventosComponent}
+  {path: 'ver-eventos', component: VerEventosComponent},
+  {path: 'turnos', component: TurnosComponent}
 ];
 
 @NgModule({

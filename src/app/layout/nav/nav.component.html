@@ -39,8 +39,8 @@
                         <li *ngIf="authService.loggedIn | async"><a class="dropdown-item" href="#" [routerLink]="['/crear-publicacion']">Ver mis publicaciones</a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="#">Eventos</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Turnos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" [routerLink]="['/eventos']">Eventos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" [routerLink]="['/turnos']">Turnos</a></li>
                 <!-- Mostrar Mis Mascotas si está logueado -->
                 <li *ngIf="authService.loggedIn | async" class="nav-item"><a class="nav-link" href="#" [routerLink]="['/mis-mascotas']">Mis Mascotas</a></li>
                 <li *ngIf="authService.loggedIn | async" class="nav-item"><a class="nav-link" href="#" [routerLink]="['/perfil']">Mi perfil</a></li>

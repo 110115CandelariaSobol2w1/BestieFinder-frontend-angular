@@ -11,7 +11,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { MiPerfilComponent } from './pages/mi-perfil/mi-perfil.component';
 import { EditarPerfilComponent } from './pages/editar-perfil/editar-perfil.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http'
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { JwtInterceptor } from './Auth/interceptor';
 import { AuthService } from './services/auth.service';
 import { VerMascotasComponent } from './pages/ver-mascotas-adopcion/ver-mascotas.component';
@@ -26,6 +26,7 @@ import { CrearPublicacionComponent } from './pages/crear-publicacion/crear-publi
 import { MisMascotasComponent } from './pages/mis-mascotas/mis-mascotas.component';
 import { EventosComponent } from './pages/eventos/eventos.component';
 import { VerEventosComponent } from './pages/ver-eventos/ver-eventos.component';
+import { TurnosComponent } from './pages/turnos/turnos.component';
 
 @NgModule({
   declarations: [
@@ -48,13 +49,15 @@ import { VerEventosComponent } from './pages/ver-eventos/ver-eventos.component';
     CrearPublicacionComponent,
     MisMascotasComponent,
     EventosComponent,
-    VerEventosComponent
+    VerEventosComponent,
+    TurnosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule
   ],
   providers: [AuthService,
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi:true}

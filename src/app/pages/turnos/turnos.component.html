@@ -1,0 +1,68 @@
+<div class="container" style="margin-top: 30px; margin-bottom: 30px;">
+    <div class="card shadow mb-3">
+        <div class="card-header py-3">
+            <p class="text-primary m-0 fw-bold"><span style="color: rgb(255, 126, 183);">Solicitar turno de castracion</span></p>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="form">
+                <div class="row" style="margin-bottom: 25px;text-align: left;">
+                    <div class="col-sm-8 col-md-8 col-lg-9 col-xl-10 col-xxl-10 align-self-center">
+                        <div class="row">
+                            <div class="col-md-12 text-start">
+                                <div class="mb-3">
+                                    <label class="form-label" for="email"><strong>Seleccione su mascota</strong></label>
+                                    <select class="form-select" aria-label="Default select example" formControlName="animal_id" [(ngModel)]="mascotaSeleccionada" name="mascota">
+                                        <option selected>Mis mascotas</option>
+                                        <option *ngFor="let mascota of mascotas" [value]="mascota.animal_id">{{mascota.animal_name}}</option>
+                                      </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-9 col-xl-10 col-xxl-10 align-self-center">
+                        <div class="row">
+                            <div class="col-md-12 text-start">
+                                <div class="mb-3">
+                                    <label class="form-label" for="email"><strong>Seleccione un centro de esterilizacion</strong></label>
+                                    <select class="form-select" aria-label="Default select example" formControlName="refugio_id" name="centro">
+                                        <option selected>Centros disponibles</option>
+                                        <option *ngFor="let centro of centrosEsterilizacion" [value]="centro.refugio_id">{{ centro.refugio_nombre}}</option>
+                                      </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-9 col-xl-10 col-xxl-10 align-self-center">
+                        <div class="row">
+                            <div class="col-md-12 text-start">
+                                <div class="mb-3">
+                                    <label class="form-label" for="username"><strong>Ingrese una fecha</strong></label>
+                                    <input class="form-control" type="date" id="fecha" placeholder="AAAA-MM-DD" (change)="onFechaChange($event)" name="fecha">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-9 col-xl-10 col-xxl-10 align-self-center">
+                        <div class="row">
+                            <div class="col-md-12 text-start">
+                                <div class="mb-3">
+                                    <label class="form-label" for="email"><strong>Seleccione un turno</strong></label>
+                                    <select class="form-select" aria-label="Default select example" formControlName="turno_fecha" [(ngModel)]="centroSeleccionado">
+                                        <option selected disabled>Turnos disponibles</option>
+                                        <option *ngFor="let turno of turnosDisponibles" [value]="turno">
+                                            {{ turno | date: 'dd/MM/yyyy HH:mm' }}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6" style="text-align: right;margin-top: 5px;">
+                        <button class="btn" id="submitBtn" type="submit" (click)="sacarTurno()">Solicitar Turno</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
