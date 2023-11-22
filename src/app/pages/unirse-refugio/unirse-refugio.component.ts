@@ -34,4 +34,9 @@ export class UnirseRefugioComponent implements OnInit {
     this.myService.unirseRefugio(refugioId);
   }
 
+  verRefugio(refugioId:number){
+    this.router.navigate([`/ver-refugio/${refugioId}`])
+  }
+  
+
 }

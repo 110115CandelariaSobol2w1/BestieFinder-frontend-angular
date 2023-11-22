@@ -16,8 +16,9 @@ export class AuthService {
   constructor(private http: HttpClient) {
     console.log('Servicio de Atuenticación está corriendo');
     this.currentUserSubject = new BehaviorSubject<Login>(
-      JSON.parse(localStorage.getItem('currentUser') || '{}')
+      JSON.parse(localStorage.getItem('currentUser') || '{}').token
     );
+    
     this.currentUser = this.currentUserSubject.asObservable();
   }
 
@@ -25,11 +26,12 @@ export class AuthService {
     //console.log(login)
     return this.http.post<any>(this.url, login).pipe(
       map((data) => {
-        localStorage.setItem('currentUser', JSON.stringify(data.token));
+        localStorage.setItem('currentUser', JSON.stringify(data));
 
         this.currentUserSubject.next(data);
         this.loggedIn.next(true);
 
+        console.log(data)
         return {
           success: 'login correcto',
           token: data.token

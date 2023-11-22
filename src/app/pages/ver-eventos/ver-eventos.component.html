@@ -1,0 +1,40 @@
+<div class="text-center text-sm-start text-md-center text-lg-center text-xl-center text-xxl-center" id="promo" style="height: 500px;">
+    <p class="font-monospace fs-1 fw-bolder shadow-lg" style="font-size: 68px;text-align: center;"><strong><span style="color: rgb(255, 255, 255);">Encuentra a tu nuevo mejor amigo!</span></strong></p><button class="btn btn-primary btn-lg font-monospace text-center text-sm-center text-md-center text-lg-center text-xl-center text-xxl-center d-flex justify-content-center align-items-center align-content-center mx-auto align-items-sm-center" type="button" style="margin-top: 200px;color: var(--bs-emphasis-color);font-weight: bold;background: linear-gradient(171deg, #ff7eb7 0%, #b6c4ff 100%), var(--bs-danger-bg-subtle);border-style: none;border-left-style: none;border-left-color: rgb(234,13,253);">MATCH</button><small class="d-sm-flex align-items-center align-content-center align-self-center justify-content-sm-center align-items-sm-center" style="color: var(--bs-body-bg);margin-top: 5px;">Solo te tomara 1 minuto</small>
+</div>
+  <div class="container">
+    <h1 class="text-center d-flex justify-content-center align-items-center" style="color: rgb(255,126,183);display: none;position: relative;font-weight: bold;text-align: center;margin-top: 15px;">
+        Eventos</h1>
+</div>
+<div class="row product-list">
+    <div *ngFor="let evento of eventos" class="col-sm-6 col-md-4 product-item" style="margin: 20px; border: #b6c4ff;">
+        <div class="product-container">
+            <div class="row">
+                <div class="col-md-12"><a class="product-image" href="#"><img style="height: 130px;" [src]="'data:image/jpeg;base64,' + evento.evento_photo"></a></div>
+            </div>
+            <div class="row">
+                <div class="col-8">
+                    <h2><a href="#">{{ evento.evento_nombre }}</a></h2>
+                </div>
+            </div>
+            <div class="product-rating"></div>
+            <div class="row">
+                <div class="col-12">
+                    <ul>
+                        <li>Tipo de evento: {{ evento.evento_descripcion }}</li>
+                        <li>Ciudad: {{ evento.evento_ciudad }}</li>
+                        <li>Ubicacion: {{ evento.evento_ubicacion }}</li>
+                        <li>Fecha y hora de inicio: {{ evento.evento_inicio }}</li>
+                        <li>Fecha y hora de finalizacion: {{ evento.evento_fin }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4 product-item"></div>
+    <div class="col-sm-6 col-md-4 product-item"></div>
+</div>
+  
+  
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/Animated-Pretty-Product-List-v12-Animated-Pretty-Product-List.js"></script>
+

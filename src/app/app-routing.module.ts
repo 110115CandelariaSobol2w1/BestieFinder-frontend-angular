@@ -14,6 +14,9 @@ import { CrearRefugioComponent } from './pages/crear-refugio/crear-refugio.compo
 import { UnirseRefugioComponent } from './pages/unirse-refugio/unirse-refugio.component';
 import { VerRefugioComponent } from './pages/ver-refugio/ver-refugio.component';
 import { CrearPublicacionComponent } from './pages/crear-publicacion/crear-publicacion.component';
+import { MisMascotasComponent } from './pages/mis-mascotas/mis-mascotas.component';
+import { EventosComponent } from './pages/eventos/eventos.component';
+import { VerEventosComponent } from './pages/ver-eventos/ver-eventos.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -29,8 +32,11 @@ const routes: Routes = [
   {path: 'ver-perros-encontrados', component: VerPerrosEncontradosComponent},
   {path: 'crear-refugio', component: CrearRefugioComponent},
   {path: 'unirse', component: UnirseRefugioComponent},
-  {path: 'ver-refugio', component: VerRefugioComponent},
-  {path: 'crear-publicacion', component: CrearPublicacionComponent}
+  {path: 'ver-refugio/:id', component: VerRefugioComponent},
+  {path: 'crear-publicacion', component: CrearPublicacionComponent},
+  {path: 'mis-mascotas', component: MisMascotasComponent},
+  {path: 'eventos', component: EventosComponent},
+  {path: 'ver-eventos', component: VerEventosComponent}
 ];
 
 @NgModule({

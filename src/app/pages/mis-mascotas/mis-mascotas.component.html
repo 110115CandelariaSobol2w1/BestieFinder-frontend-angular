@@ -1,0 +1,39 @@
+<div class="container">
+    <h1 class="text-center d-flex justify-content-center align-items-center" style="color: rgb(255,126,183);display: none;position: relative;font-weight: bold;text-align: center;margin-top: 15px;">
+        Mis mascotas</h1>
+</div>
+<div class="row product-list">
+    <div *ngFor="let mascota of mascotas" class="col-sm-6 col-md-4 product-item" style="margin: 20px; border: #b6c4ff;">
+        <div class="product-container">
+            <div class="row">
+                <div class="col-md-12"><a class="product-image" href="#"><img style="height: 130px;" [src]="'data:image/jpeg;base64,' + mascota.animal_photo"></a></div>
+            </div>
+            <div class="row">
+                <div class="col-8">
+                    <h2><a href="#">{{ mascota.animal_name }}</a></h2>
+                </div>
+            </div>
+            <div class="product-rating"></div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-6 mb-2"><button class="btn" type="button" style="background: linear-gradient(#ff7eb7, #b6c4ff);color: black;margin-bottom: 10px;">Editar</button></div>
+                        <div class="col-6 mb-2"><button class="btn" type="button" style="background: linear-gradient(#ff7eb7, #b6c4ff);color: black;margin-bottom: 10px;">Eliminar</button></div>
+                    </div>
+                    <ul>
+                        <li>Raza: {{ mascota.animal_raza }}</li>
+                        <li>Edad: {{ mascota.animal_edad }}</li>
+                        <li>Sexo: {{ mascota.animal_sexo }}</li>
+                        <li>Color: {{ mascota.animal_color }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4 product-item"></div>
+    <div class="col-sm-6 col-md-4 product-item"></div>
+</div>
+  
+  
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/Animated-Pretty-Product-List-v12-Animated-Pretty-Product-List.js"></script>

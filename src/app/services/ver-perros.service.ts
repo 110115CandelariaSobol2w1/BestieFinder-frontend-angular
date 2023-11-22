@@ -25,5 +25,4 @@ export class VerPerrosService {
     return this.http.get('http://localhost:3000/publicaciones/encontrados/perros');
   }
 
-
 }

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md">
+<!-- <nav class="navbar navbar-expand-md">
     <div class="container-fluid"><img id="logo" src="assets/animals_5443293.png"><a class="navbar-brand" href="#" style="color: rgb(255,126,183);"><strong>Bestie Finder</strong></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navcol-1">
             <ul class="navbar-nav ms-auto">
@@ -13,4 +13,42 @@
             </ul>
         </div>
     </div>
+</nav> -->
+
+<nav class="navbar navbar-expand-md">
+    <div class="container-fluid">
+        <img id="logo" src="assets/animals_5443293.png">
+        <a class="navbar-brand" href="#" style="color: rgb(255,126,183);"><strong>Bestie Finder</strong></a>
+        <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1">
+            <span class="visually-hidden">Toggle navigation</span>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="navbar-nav ms-auto">
+                <!-- Opciones comunes -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="publicacionesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Publicaciones
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="publicacionesDropdown">
+                        <li><a class="dropdown-item" href="#" [routerLink]="['/ver-mascotas']">Mascotas en Adopción</a></li>
+                        <li><a class="dropdown-item" href="#">Mascotas Perdidas</a></li>
+                        <li><a class="dropdown-item" href="#">Mascotas Encontradas</a></li>
+                        <!-- Si está logueado, mostrar la opción adicional -->
+                        <li *ngIf="authService.loggedIn | async"><a class="dropdown-item" href="#" [routerLink]="['/crear-publicacion']">Publicar una Mascota</a></li>
+                        <li *ngIf="authService.loggedIn | async"><a class="dropdown-item" href="#" [routerLink]="['/crear-publicacion']">Ver mis publicaciones</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#">Eventos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Turnos</a></li>
+                <!-- Mostrar Mis Mascotas si está logueado -->
+                <li *ngIf="authService.loggedIn | async" class="nav-item"><a class="nav-link" href="#" [routerLink]="['/mis-mascotas']">Mis Mascotas</a></li>
+                <li *ngIf="authService.loggedIn | async" class="nav-item"><a class="nav-link" href="#" [routerLink]="['/perfil']">Mi perfil</a></li>
+                <!-- Opción de iniciar/cerrar sesión -->
+                <li *ngIf="!(authService.loggedIn | async)" class="nav-item"><a routerLink="iniciar-sesion" class="nav-link" href="#">Iniciar Sesión</a></li>
+                <li *ngIf="(authService.loggedIn | async)" (click)="logout()" class="nav-item"><a class="nav-link" href="#">Cerrar Sesión</a></li>
+            </ul>
+        </div>
+    </div>
 </nav>
+

@@ -23,6 +23,9 @@ import { CrearRefugioComponent } from './pages/crear-refugio/crear-refugio.compo
 import { UnirseRefugioComponent } from './pages/unirse-refugio/unirse-refugio.component';
 import { VerRefugioComponent } from './pages/ver-refugio/ver-refugio.component';
 import { CrearPublicacionComponent } from './pages/crear-publicacion/crear-publicacion.component';
+import { MisMascotasComponent } from './pages/mis-mascotas/mis-mascotas.component';
+import { EventosComponent } from './pages/eventos/eventos.component';
+import { VerEventosComponent } from './pages/ver-eventos/ver-eventos.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,10 @@ import { CrearPublicacionComponent } from './pages/crear-publicacion/crear-publi
     CrearRefugioComponent,
     UnirseRefugioComponent,
     VerRefugioComponent,
-    CrearPublicacionComponent
+    CrearPublicacionComponent,
+    MisMascotasComponent,
+    EventosComponent,
+    VerEventosComponent
   ],
   imports: [
     BrowserModule,

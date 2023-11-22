@@ -9,31 +9,24 @@ import { AuthService } from '../services/auth.service';
 import { Observable } from 'rxjs';
 
 @Injectable({
-    providedIn: 'root',
-  })
-  export class JwtInterceptor implements HttpInterceptor {
-    constructor(private authService: AuthService) {}
-  
+  providedIn: 'root'
+})
+export class JwtInterceptor implements HttpInterceptor {
+  constructor(private authService: AuthService) {}
 
-    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-      const currentUser = this.authService.usuarioAutenticado;
-      if (currentUser && currentUser) {
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    const currentUser = this.authService.usuarioAutenticado;
+    if (currentUser && currentUser.token) {
       req = req.clone({
-      setHeaders: {
-      Authorization: `Bearer ${currentUser}`
-      }
+        setHeaders: {
+          Authorization: `Bearer ${currentUser.token}`
+        }
       });
-      }
-      console.log("INTERCEPTOR: " + currentUser);
-      return next.handle(req);
-      }
-      
-
-    
-
-    
-      
+    }
+    return next.handle(req);
   }
+}
+
   
   
   
