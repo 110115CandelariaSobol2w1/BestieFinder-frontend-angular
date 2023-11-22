@@ -1,0 +1,39 @@
+<div class="container">
+    <section class="mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 text-center mb-3">
+                    <h3><strong><span style="color: rgb(255, 126, 183);">Mis turnos</span></strong></h3>
+                </div>
+                <div class="col-xl-12">
+                    <div class="table-responsive" id="myTable">
+                        <table class="table table-striped table-sm table-bordered">
+                            <thead>
+                                <tr>
+                                    <th><span style="color: rgb(255, 126, 183);">Centro de Esterilizacion</span></th>
+                                    <th><span style="color: rgb(255, 126, 183);">Fecha Turno</span></th>
+                                    <th class="text-center" style="width: 150px;"><span style="color: rgb(255, 126, 183);">Acciones</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let turno of turnos">
+                                    <td>{{turno.refugio_id}}</td>
+                                    <td>{{turno.turno_fecha}}</td>
+                                    <td class="text-center">
+                                        <div class="btn-group btn-group-sm" role="group" aria-label="Acciones">
+                                            <button class="btn" style="color: var(--bs-emphasis-color);background: rgb(255,126,183);" type="button">Cancelar Turno</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/Dynamically-Add-Remove-Table-Row-style.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

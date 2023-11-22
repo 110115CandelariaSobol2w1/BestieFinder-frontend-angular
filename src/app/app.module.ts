@@ -27,6 +27,7 @@ import { MisMascotasComponent } from './pages/mis-mascotas/mis-mascotas.componen
 import { EventosComponent } from './pages/eventos/eventos.component';
 import { VerEventosComponent } from './pages/ver-eventos/ver-eventos.component';
 import { TurnosComponent } from './pages/turnos/turnos.component';
+import { VerTurnosComponent } from './pages/ver-turnos/ver-turnos.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { TurnosComponent } from './pages/turnos/turnos.component';
     MisMascotasComponent,
     EventosComponent,
     VerEventosComponent,
-    TurnosComponent
+    TurnosComponent,
+    VerTurnosComponent
   ],
   imports: [
     BrowserModule,

@@ -32,4 +32,8 @@ export class TurnosService {
   createTurno(turno: Turno): Observable<any>{
     return this.http.post('http://localhost:3000/turnos',turno)
   }
+
+  obtenerMisTurnos(): Observable<any>{
+    return this.http.get('http://localhost:3000/turnos/usuario')
+  }
 }
