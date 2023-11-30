@@ -28,6 +28,8 @@ import { EventosComponent } from './pages/eventos/eventos.component';
 import { VerEventosComponent } from './pages/ver-eventos/ver-eventos.component';
 import { TurnosComponent } from './pages/turnos/turnos.component';
 import { VerTurnosComponent } from './pages/ver-turnos/ver-turnos.component';
+import { DonarComponent } from './pages/donar/donar.component';
+import { VerTurnosRefugiosComponent } from './pages/ver-turnos-refugios/ver-turnos-refugios.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,9 @@ import { VerTurnosComponent } from './pages/ver-turnos/ver-turnos.component';
     EventosComponent,
     VerEventosComponent,
     TurnosComponent,
-    VerTurnosComponent
+    VerTurnosComponent,
+    DonarComponent,
+    VerTurnosRefugiosComponent
   ],
   imports: [
     BrowserModule,

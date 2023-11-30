@@ -36,6 +36,7 @@
                         <li><a class="dropdown-item" href="#">Mascotas Encontradas</a></li>
                         <!-- Si está logueado, mostrar la opción adicional -->
                         <li *ngIf="authService.loggedIn | async"><a class="dropdown-item" href="#" [routerLink]="['/crear-publicacion']">Publicar una Mascota</a></li>
+                        <li *ngIf="authService.loggedIn | async"><a class="dropdown-item" href="#" [routerLink]="['/donar']">Donar</a></li>
                         <!-- <li *ngIf="authService.loggedIn | async"><a class="dropdown-item" href="#" [routerLink]="['/crear-publicacion']">Ver mis publicaciones</a></li> -->
                     </ul>
                 </li>

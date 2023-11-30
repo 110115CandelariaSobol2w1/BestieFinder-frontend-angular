@@ -1,0 +1,48 @@
+<div>
+    <div class="container">
+      <section class="mt-4">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-12 text-center mb-3">
+              <h3><strong><span style="color: rgb(255, 126, 183);">Realizar una donacion:</span></strong></h3>
+            </div>
+            <div class="container py-5">
+              <div class="row">
+                <div class="col-lg-7 mx-auto">
+                  <div class="bg-white rounded-lg shadow-sm p-5">
+                    <!-- Credit card form tabs -->
+                    <ul role="tablist" class="nav bg-light nav-pills rounded-pill nav-fill mb-3">
+                      <li class="nav-item">
+                        <a data-toggle="pill" href="#nav-tab-card" class="nav-link active rounded-pill">Mercado Pago</a>
+                      </li>
+                    </ul>
+                    <div class="tab-content">
+                      <div id="nav-tab-card" class="tab-pane fade show active">
+                        <p class="alert alert-success">Sera redireccionado a la pagina de pago.</p>
+                        <form [formGroup]="form" role="form">
+                          <div class="form-group">
+                            <label for="username">Seleccionar refugio al que desea donar</label>
+                            <select class="form-select" aria-label="Default select example" formControlName="refugio" (change)="onRefugioSelected($event)">
+                                <option *ngFor="let refugio of refugios" [value]="refugio.refugio_id">
+                                    {{refugio.refugio_nombre}}
+                                </option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label for="cardNumber">Monto de la donacion</label>
+                            <div class="input-group">
+                              <input type="text" name="cardNumber" placeholder="100" class="form-control" required="" formControlName="monto">
+                            </div>
+                          </div><button type="button" class="subscribe btn btn-primary btn-block rounded-pill shadow-sm" (click)="pagar()">Pagar</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
