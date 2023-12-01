@@ -46,6 +46,10 @@ export class VerRefugiosService {
     return this.http.get(url);
   }
 
+  obtenerRefugioPorUsuario():Observable<any>{
+    return this.http.get('http://localhost:3000/refugios/refugio');
+  }
+
 
 
 }

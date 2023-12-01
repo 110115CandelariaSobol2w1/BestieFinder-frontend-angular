@@ -30,6 +30,7 @@ import { TurnosComponent } from './pages/turnos/turnos.component';
 import { VerTurnosComponent } from './pages/ver-turnos/ver-turnos.component';
 import { DonarComponent } from './pages/donar/donar.component';
 import { VerTurnosRefugiosComponent } from './pages/ver-turnos-refugios/ver-turnos-refugios.component';
+import { MiRefugioComponent } from './pages/mi-refugio/mi-refugio.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { VerTurnosRefugiosComponent } from './pages/ver-turnos-refugios/ver-turn
     TurnosComponent,
     VerTurnosComponent,
     DonarComponent,
-    VerTurnosRefugiosComponent
+    VerTurnosRefugiosComponent,
+    MiRefugioComponent
   ],
   imports: [
     BrowserModule,

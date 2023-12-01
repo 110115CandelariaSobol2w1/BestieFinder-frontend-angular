@@ -13,6 +13,9 @@ export class AuthService {
   currentUser: Observable<Login>;
   loggedIn = new BehaviorSubject<boolean>(false);
 
+  private esPropietarioSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
+
   constructor(private http: HttpClient) {
     console.log('Servicio de Atuenticación está corriendo');
     this.currentUserSubject = new BehaviorSubject<Login>(
@@ -30,6 +33,9 @@ export class AuthService {
 
         this.currentUserSubject.next(data);
         this.loggedIn.next(true);
+
+        this.actualizarEstadoPropietario();
+        console.log(this.actualizarEstadoPropietario())
 
         console.log(data)
         return {
@@ -52,5 +58,16 @@ export class AuthService {
 
   get estaAutenticado(): Observable<boolean> {
     return this.loggedIn.asObservable();
+  }
+
+  esPropietario(): Observable<boolean> {
+    return this.esPropietarioSubject.asObservable();
+  }
+
+  actualizarEstadoPropietario(): void {
+    this.http.get<boolean>('http://localhost:3000/usuarios-refugios/owner')
+      .subscribe((resultado: boolean) => {
+        this.esPropietarioSubject.next(resultado);
+      });
   }
 }

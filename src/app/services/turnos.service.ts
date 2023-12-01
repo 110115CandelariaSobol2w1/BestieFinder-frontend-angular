@@ -36,4 +36,8 @@ export class TurnosService {
   obtenerMisTurnos(): Observable<any>{
     return this.http.get('http://localhost:3000/turnos/usuario')
   }
+
+  obtenerTurnosRefugio(): Observable<any>{
+    return this.http.get('http://localhost:3000/turnos/refugio')
+  }
 }

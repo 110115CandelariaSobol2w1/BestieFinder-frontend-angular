@@ -63,6 +63,7 @@
                 <!-- Mostrar Mis Mascotas si está logueado -->
                 <li *ngIf="authService.loggedIn | async" class="nav-item"><a class="nav-link" href="#" [routerLink]="['/mis-mascotas']">Mis Mascotas</a></li>
                 <li *ngIf="authService.loggedIn | async" class="nav-item"><a class="nav-link" href="#" [routerLink]="['/perfil']">Mi perfil</a></li>
+                <li *ngIf="esPropietarioRefugio" class="nav-item"><a class="nav-link" href="#" [routerLink]="['/perfil']">Mi Refugio</a></li>
                 <!-- Opción de iniciar/cerrar sesión -->
                 <li *ngIf="!(authService.loggedIn | async)" class="nav-item"><a routerLink="iniciar-sesion" class="nav-link" href="#">Iniciar Sesión</a></li>
                 <li *ngIf="(authService.loggedIn | async)" (click)="logout()" class="nav-item"><a class="nav-link" href="#">Cerrar Sesión</a></li>

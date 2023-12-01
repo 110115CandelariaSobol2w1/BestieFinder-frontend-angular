@@ -20,6 +20,7 @@ import { VerEventosComponent } from './pages/ver-eventos/ver-eventos.component';
 import { TurnosComponent } from './pages/turnos/turnos.component';
 import { VerTurnosComponent } from './pages/ver-turnos/ver-turnos.component';
 import { DonarComponent } from './pages/donar/donar.component';
+import { VerTurnosRefugiosComponent } from './pages/ver-turnos-refugios/ver-turnos-refugios.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -42,7 +43,8 @@ const routes: Routes = [
   {path: 'ver-eventos', component: VerEventosComponent},
   {path: 'turnos', component: TurnosComponent},
   {path: 'mis-turnos', component: VerTurnosComponent},
-  {path: 'donar', component: DonarComponent}
+  {path: 'donar', component: DonarComponent},
+  {path: 'turnos-refugio', component: VerTurnosRefugiosComponent}
 ];
 
 @NgModule({

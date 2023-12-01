@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TurnosService } from 'src/app/services/turnos.service';
 
 @Component({
   selector: 'app-ver-turnos-refugios',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VerTurnosRefugiosComponent implements OnInit {
 
-  constructor() { }
+  turnos: any[] =[];
+
+  constructor(private myService: TurnosService) { }
 
   ngOnInit(): void {
+    this.myService.obtenerTurnosRefugio().subscribe(data => {
+      console.log(data);
+      this.turnos = data.data;
+    })
   }
 
 }
