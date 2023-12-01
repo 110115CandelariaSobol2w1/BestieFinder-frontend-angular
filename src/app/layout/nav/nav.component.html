@@ -32,8 +32,8 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="publicacionesDropdown">
                         <li><a class="dropdown-item" href="#" [routerLink]="['/ver-mascotas']">Mascotas en Adopción</a></li>
-                        <li><a class="dropdown-item" href="#">Mascotas Perdidas</a></li>
-                        <li><a class="dropdown-item" href="#">Mascotas Encontradas</a></li>
+                        <li><a class="dropdown-item" href="#" [routerLink]="['/mascotas-perdidas']" >Mascotas Perdidas</a></li>
+                        <li><a class="dropdown-item" href="#" [routerLink]="['/mascotas-encontradas']">Mascotas Encontradas</a></li>
                         <!-- Si está logueado, mostrar la opción adicional -->
                         <li *ngIf="authService.loggedIn | async"><a class="dropdown-item" href="#" [routerLink]="['/crear-publicacion']">Publicar una Mascota</a></li>
                         <!-- <li *ngIf="authService.loggedIn | async"><a class="dropdown-item" href="#" [routerLink]="['/crear-publicacion']">Ver mis publicaciones</a></li> -->

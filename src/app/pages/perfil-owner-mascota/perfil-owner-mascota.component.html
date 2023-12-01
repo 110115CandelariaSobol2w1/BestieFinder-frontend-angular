@@ -1,0 +1,56 @@
+<main class="page" style="min-height: 100%;">
+    <section class="clean-block about-us">
+        <div class="row" style="margin-right: 0px;margin-left: 0px;">
+            <div class="col text-center" style="margin-top: 30px;">
+                <h1 style="color: rgb(255,126,183);">{{usuario.nombre}} {{usuario.apellido}}</h1>
+            </div>
+        </div>
+        <div class="row justify-content-center" style="margin-right: 0px;margin-left: 0px;margin-top: 10px;">
+            <div class="col-sm-6 col-lg-4" style="padding-right: 0px;padding-left: 0px;">
+                <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" [src]="'data:image/jpeg;base64,' + usuario.photo">
+                    <div class="card-body info">
+                        <div class="row" style="margin-top: -24px;">
+                            <div class="col-md-12" style="margin-top: 22px;">
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="labels"><strong>Nombre</strong></p>
+                                    </div>
+                                    <div class="col">
+                                        <p class="labels">{{usuario.nombre}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="labels"><strong>Apellido</strong></p>
+                                    </div>
+                                    <div class="col">
+                                        <p class="labels">{{usuario.apellido}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="labels"><strong>Email</strong></p>
+                                    </div>
+                                    <div class="col">
+                                        <p class="labels">{{usuario.email}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="labels"><strong>Telefono</strong></p>
+                                    </div>
+                                    <div class="col">
+                                        <p class="labels">{{usuario.telefono}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12"><a [routerLink]="'/editar-perfil'" class="btn btn-success" role="button" href="editProfile.html" style="color: rgb(0,0,0);background: linear-gradient(#ff7eb7, #b6c4ff);border-style: none;"><i class="fas fa-pencil-alt" style="color: rgb(0,0,0);"></i>&nbsp;Editar</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

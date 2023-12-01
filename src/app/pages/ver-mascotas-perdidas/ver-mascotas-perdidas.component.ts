@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { VerMascotasService } from 'src/app/services/ver-mascotas.service';
 
 @Component({
-  selector: 'app-ver-mascotas',
-  templateUrl: './ver-mascotas.component.html',
-  styleUrls: ['./ver-mascotas.component.css']
+  selector: 'app-ver-mascotas-perdidas',
+  templateUrl: './ver-mascotas-perdidas.component.html',
+  styleUrls: ['./ver-mascotas-perdidas.component.css']
 })
-export class VerMascotasComponent implements OnInit {
+export class VerMascotasPerdidasComponent implements OnInit {
 
   mascotas: any[] = [];
   filtroSeleccionado: string | undefined;
@@ -23,13 +23,25 @@ export class VerMascotasComponent implements OnInit {
     // Dependiendo del filtro seleccionado, llama al servicio correspondiente
     switch (filtro) {
       case 'perro':
-        this.myService.obtenerPerrosAdopcion().subscribe((data) => {
+        this.myService.obtenerPerrosPerdidos().subscribe((data) => {
           console.log(data);
           this.mascotas = data.data;
         });
         break;
       case 'gato':
-        this.myService.obtenerGatosAdopcion().subscribe((data) => {
+        this.myService.obtenerGatosPerdidos().subscribe((data) => {
+          console.log(data);
+          this.mascotas = data.data;
+        });
+        break;
+        case 'aves':
+        this.myService.obtenerAvesPerdidas().subscribe((data) => {
+          console.log(data);
+          this.mascotas = data.data;
+        });
+        break;
+      case 'otros':
+        this.myService.obtenerOtrosPerdidos().subscribe((data) => {
           console.log(data);
           this.mascotas = data.data;
         });
@@ -48,11 +60,5 @@ export class VerMascotasComponent implements OnInit {
     })
   }
 
-  // obtenerPerfilDueño(id: number){
-  //   this.myService.obtenerPerfilDueño(id).subscribe(data => {
-  //     console.log(data);
-  //     this.mascotas = data.data
-  //   })
-  // }
 
 }

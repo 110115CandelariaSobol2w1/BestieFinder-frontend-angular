@@ -19,4 +19,8 @@ export class MiPerfilService {
   usuarioRefugio(): Observable<any> {
     return this.http.get('http://localhost:3000/usuarios-refugios/');
   }
+
+  obtenerPerfilDueño(id: number):Observable<any>{
+    return this.http.get(`http://localhost:3000/users/${id}`)
+  }
 }

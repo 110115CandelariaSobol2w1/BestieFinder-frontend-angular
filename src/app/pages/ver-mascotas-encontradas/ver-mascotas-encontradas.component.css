@@ -1,0 +1,8 @@
+#promo {
+    text-align: center;
+    padding: 40px;
+    width: 100%;
+    background: url(src/assets/perro-gato.png);
+    background-size: cover;
+    background-position: center;
+  }

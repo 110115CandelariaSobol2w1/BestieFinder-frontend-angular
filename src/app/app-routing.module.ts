@@ -24,6 +24,9 @@ import { VerTurnosRefugiosComponent } from './pages/ver-turnos-refugios/ver-turn
 import { MiRefugioComponent } from './pages/mi-refugio/mi-refugio.component';
 import { SolicitudesComponent } from './pages/solicitudes/solicitudes.component';
 import { DonacionesRefugioComponent } from './pages/donaciones-refugio/donaciones-refugio.component';
+import { PerfilOwnerMascotaComponent } from './pages/perfil-owner-mascota/perfil-owner-mascota.component';
+import { VerMascotasPerdidasComponent } from './pages/ver-mascotas-perdidas/ver-mascotas-perdidas.component';
+import { VerMascotasEncontradasComponent } from './pages/ver-mascotas-encontradas/ver-mascotas-encontradas.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -51,7 +54,10 @@ const routes: Routes = [
   {path: 'mi-refugio', component: MiRefugioComponent},
   {path: 'ver-turnos-refugio', component: VerTurnosRefugiosComponent},
   {path: 'solicitudes', component: SolicitudesComponent},
-  {path: 'donaciones', component: DonacionesRefugioComponent}
+  {path: 'donaciones', component: DonacionesRefugioComponent},
+  {path: 'informacion-mascota/:idUsuario', component: PerfilOwnerMascotaComponent},
+  {path: 'mascotas-perdidas', component: VerMascotasPerdidasComponent},
+  {path: 'mascotas-encontradas', component: VerMascotasEncontradasComponent}
 ];
 
 @NgModule({

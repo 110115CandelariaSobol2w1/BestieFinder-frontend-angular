@@ -33,6 +33,9 @@ import { VerTurnosRefugiosComponent } from './pages/ver-turnos-refugios/ver-turn
 import { MiRefugioComponent } from './pages/mi-refugio/mi-refugio.component';
 import { SolicitudesComponent } from './pages/solicitudes/solicitudes.component';
 import { DonacionesRefugioComponent } from './pages/donaciones-refugio/donaciones-refugio.component';
+import { VerMascotasPerdidasComponent } from './pages/ver-mascotas-perdidas/ver-mascotas-perdidas.component';
+import { VerMascotasEncontradasComponent } from './pages/ver-mascotas-encontradas/ver-mascotas-encontradas.component';
+import { PerfilOwnerMascotaComponent } from './pages/perfil-owner-mascota/perfil-owner-mascota.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +65,10 @@ import { DonacionesRefugioComponent } from './pages/donaciones-refugio/donacione
     VerTurnosRefugiosComponent,
     MiRefugioComponent,
     SolicitudesComponent,
-    DonacionesRefugioComponent
+    DonacionesRefugioComponent,
+    VerMascotasPerdidasComponent,
+    VerMascotasEncontradasComponent,
+    PerfilOwnerMascotaComponent
   ],
   imports: [
     BrowserModule,
