@@ -12,17 +12,14 @@
                                 <tr>
                                     <th><span style="color: rgb(255, 126, 183);">Usuario</span></th>
                                     <th><span style="color: rgb(255, 126, 183);">Fecha Turno</span></th>
+                                    <th><span style="color: rgb(255, 126, 183);">Telefono</span></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr *ngFor="let turno of turnos">
-                                    <td>{{turno.Usuario.nombre}} {{turno.usuario.apellido}}</td>
-                                    <td>{{turno.turno_fecha}}</td>
-                                    <td class="text-center">
-                                        <div class="btn-group btn-group-sm" role="group" aria-label="Acciones">
-                                            <button class="btn" style="color: var(--bs-emphasis-color);background: rgb(255,126,183);" type="button">Cancelar Turno</button>
-                                        </div>
-                                    </td>
+                                    <td>{{turno.usuario.nombre}} {{turno.usuario.apellido}}</td>
+                                    <td>{{ turno.turno_fecha | date: 'dd/MM/yyyy HH:mm' }}</td>
+                                    <td>{{turno.usuario.telefono}}</td>
                                 </tr>
                             </tbody>
                         </table>

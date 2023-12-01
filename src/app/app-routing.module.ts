@@ -21,6 +21,7 @@ import { TurnosComponent } from './pages/turnos/turnos.component';
 import { VerTurnosComponent } from './pages/ver-turnos/ver-turnos.component';
 import { DonarComponent } from './pages/donar/donar.component';
 import { VerTurnosRefugiosComponent } from './pages/ver-turnos-refugios/ver-turnos-refugios.component';
+import { MiRefugioComponent } from './pages/mi-refugio/mi-refugio.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -44,7 +45,9 @@ const routes: Routes = [
   {path: 'turnos', component: TurnosComponent},
   {path: 'mis-turnos', component: VerTurnosComponent},
   {path: 'donar', component: DonarComponent},
-  {path: 'turnos-refugio', component: VerTurnosRefugiosComponent}
+  {path: 'turnos-refugio', component: VerTurnosRefugiosComponent},
+  {path: 'mi-refugio', component: MiRefugioComponent},
+  {path: 'ver-turnos-refugio', component: VerTurnosRefugiosComponent}
 ];
 
 @NgModule({

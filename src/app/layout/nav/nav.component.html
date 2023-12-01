@@ -36,7 +36,6 @@
                         <li><a class="dropdown-item" href="#">Mascotas Encontradas</a></li>
                         <!-- Si está logueado, mostrar la opción adicional -->
                         <li *ngIf="authService.loggedIn | async"><a class="dropdown-item" href="#" [routerLink]="['/crear-publicacion']">Publicar una Mascota</a></li>
-                        <li *ngIf="authService.loggedIn | async"><a class="dropdown-item" href="#" [routerLink]="['/donar']">Donar</a></li>
                         <!-- <li *ngIf="authService.loggedIn | async"><a class="dropdown-item" href="#" [routerLink]="['/crear-publicacion']">Ver mis publicaciones</a></li> -->
                     </ul>
                 </li>
@@ -63,7 +62,19 @@
                 <!-- Mostrar Mis Mascotas si está logueado -->
                 <li *ngIf="authService.loggedIn | async" class="nav-item"><a class="nav-link" href="#" [routerLink]="['/mis-mascotas']">Mis Mascotas</a></li>
                 <li *ngIf="authService.loggedIn | async" class="nav-item"><a class="nav-link" href="#" [routerLink]="['/perfil']">Mi perfil</a></li>
-                <li *ngIf="esPropietarioRefugio" class="nav-item"><a class="nav-link" href="#" [routerLink]="['/perfil']">Mi Refugio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" [routerLink]="(authService.estaAutenticado | async) ? ['/donar'] : ['/iniciar-sesion']">Donar</a></li>
+                <li *ngIf="esPropietarioRefugio" class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="turnosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Mi Refugio
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="turnosDropdown">
+                        <li><a class="dropdown-item" href="#" [routerLink]="['/mi-refugio']">Ver mi refugio</a></li>
+                        <li><a class="dropdown-item" href="#" [routerLink]="['/ver-turnos-refugio']">Ver mis turnos</a></li>
+                        <li><a class="dropdown-item" href="#" [routerLink]="['/mis-turnos']">Ver donaciones recibidas</a></li>
+                        <!-- Si está logueado, mostrar la opción adicional -->
+                    </ul>
+                </li>
+                <!-- <li *ngIf="esPropietarioRefugio" class="nav-item"><a class="nav-link" href="#" [routerLink]="['/perfil']">Mi Refugio</a></li> -->
                 <!-- Opción de iniciar/cerrar sesión -->
                 <li *ngIf="!(authService.loggedIn | async)" class="nav-item"><a routerLink="iniciar-sesion" class="nav-link" href="#">Iniciar Sesión</a></li>
                 <li *ngIf="(authService.loggedIn | async)" (click)="logout()" class="nav-item"><a class="nav-link" href="#">Cerrar Sesión</a></li>
