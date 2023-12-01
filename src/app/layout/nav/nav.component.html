@@ -39,7 +39,8 @@
                         <!-- <li *ngIf="authService.loggedIn | async"><a class="dropdown-item" href="#" [routerLink]="['/crear-publicacion']">Ver mis publicaciones</a></li> -->
                     </ul>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item"><a class="nav-link" href="#" [routerLink]="['/ver-eventos']">Eventos</a></li>
+                <li *ngIf="esPropietarioRefugio" class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="eventosDropDown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Eventos
                     </a>
@@ -49,7 +50,8 @@
                         <!-- Si está logueado, mostrar la opción adicional -->
                     </ul>
                 </li>
-                <li *ngIf="authService.loggedIn | async" class="nav-item dropdown">
+                <li class="nav-item"><a class="nav-link" href="#" [routerLink]="(authService.estaAutenticado | async) ? ['/donar'] : ['/iniciar-sesion']">Donar</a></li>
+                <li *ngIf="!esPropietarioRefugio" class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="turnosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Turnos
                     </a>
@@ -62,7 +64,6 @@
                 <!-- Mostrar Mis Mascotas si está logueado -->
                 <li *ngIf="authService.loggedIn | async" class="nav-item"><a class="nav-link" href="#" [routerLink]="['/mis-mascotas']">Mis Mascotas</a></li>
                 <li *ngIf="authService.loggedIn | async" class="nav-item"><a class="nav-link" href="#" [routerLink]="['/perfil']">Mi perfil</a></li>
-                <li class="nav-item"><a class="nav-link" href="#" [routerLink]="(authService.estaAutenticado | async) ? ['/donar'] : ['/iniciar-sesion']">Donar</a></li>
                 <li *ngIf="esPropietarioRefugio" class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="turnosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Mi Refugio

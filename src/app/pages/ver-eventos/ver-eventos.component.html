@@ -23,8 +23,8 @@
                         <li>Tipo de evento: {{ evento.evento_descripcion }}</li>
                         <li>Ciudad: {{ evento.evento_ciudad }}</li>
                         <li>Ubicacion: {{ evento.evento_ubicacion }}</li>
-                        <li>Fecha y hora de inicio: {{ evento.evento_inicio }}</li>
-                        <li>Fecha y hora de finalizacion: {{ evento.evento_fin }}</li>
+                        <li>Fecha y hora de inicio: {{ evento.evento_inicio | date: 'dd/MM/yyyy HH:mm' }}</li>
+                        <li>Fecha y hora de finalizacion: {{ evento.evento_fin | date: 'dd/MM/yyyy HH:mm' }}</li>
                     </ul>
                 </div>
             </div>
