@@ -2,6 +2,9 @@
     <h1 class="text-center d-flex justify-content-center align-items-center" style="color: rgb(255,126,183);display: none;position: relative;font-weight: bold;text-align: center;margin-top: 15px;">
         Mis mascotas</h1>
 </div>
+<div class="col-xl-12 text-center mb-3">
+    <h3 ngIf="mostrarMensaje"><strong><span style="color: rgb(255, 126, 183);">No registra mascotas</span></strong></h3>
+</div>
 <div class="row product-list">
     <div *ngFor="let mascota of mascotas" class="col-sm-6 col-md-4 product-item" style="margin: 20px; border: #b6c4ff;">
         <div class="product-container">

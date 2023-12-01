@@ -11,6 +11,7 @@ import { VerPerrosService } from 'src/app/services/ver-perros.service';
 export class MisMascotasComponent implements OnInit {
 
   mascotas: any[] = [];
+  mostrarMensaje = false;
 
   constructor(private myService: VerMascotasService) {}
 
@@ -23,6 +24,7 @@ export class MisMascotasComponent implements OnInit {
         console.log(data);
         this.mascotas = data.data;
       });
+      this.mostrarMensaje = this.mascotas.length === 0;
     } else {
       alert('Se produjo un error')
     }

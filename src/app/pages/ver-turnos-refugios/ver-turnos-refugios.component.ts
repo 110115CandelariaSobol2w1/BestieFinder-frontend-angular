@@ -9,6 +9,7 @@ import { TurnosService } from 'src/app/services/turnos.service';
 export class VerTurnosRefugiosComponent implements OnInit {
 
   turnos: any[] =[];
+  mostrarMensaje = false;
 
   constructor(private myService: TurnosService) { }
 
@@ -16,6 +17,7 @@ export class VerTurnosRefugiosComponent implements OnInit {
     this.myService.obtenerTurnosRefugio().subscribe(data => {
       console.log(data);
       this.turnos = data.data;
+      this.mostrarMensaje = this.turnos.length === 0;
     })
   }
 

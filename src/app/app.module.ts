@@ -31,6 +31,8 @@ import { VerTurnosComponent } from './pages/ver-turnos/ver-turnos.component';
 import { DonarComponent } from './pages/donar/donar.component';
 import { VerTurnosRefugiosComponent } from './pages/ver-turnos-refugios/ver-turnos-refugios.component';
 import { MiRefugioComponent } from './pages/mi-refugio/mi-refugio.component';
+import { SolicitudesComponent } from './pages/solicitudes/solicitudes.component';
+import { DonacionesRefugioComponent } from './pages/donaciones-refugio/donaciones-refugio.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,9 @@ import { MiRefugioComponent } from './pages/mi-refugio/mi-refugio.component';
     VerTurnosComponent,
     DonarComponent,
     VerTurnosRefugiosComponent,
-    MiRefugioComponent
+    MiRefugioComponent,
+    SolicitudesComponent,
+    DonacionesRefugioComponent
   ],
   imports: [
     BrowserModule,
