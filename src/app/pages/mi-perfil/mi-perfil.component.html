@@ -55,7 +55,7 @@
                 </div>
             </div>
         </div>
-        <div class="col text-center d-md-flex justify-content-center align-items-center justify-content-md-center align-items-md-center" style="box-shadow: 0px 0px;display: flex;position: static;margin-top: 25px; margin-bottom: 30px;">
+        <div *ngIf="!perteneceARefugio" class="col text-center d-md-flex justify-content-center align-items-center justify-content-md-center align-items-md-center" style="box-shadow: 0px 0px;display: flex;position: static;margin-top: 25px; margin-bottom: 30px;">
             <button  class="btn btn-link" data-bss-hover-animate="pulse" style="color: #000000;/*border-color: rgb(182,196,255);*/background: linear-gradient(#ff7eb7, #b6c4ff), rgb(255,126,183);" type="button" [routerLink]="['/crear-refugio']">
                 <span style="color: rgb(0, 0, 0);">Registrar un refugio</span>
                 <strong><span style="color: rgb(182, 196, 255);">&nbsp;</span></strong>
@@ -66,6 +66,11 @@
                 <strong><span style="color: rgb(0, 0, 0);">&nbsp;</span></strong>
                 <i class="icon ion-android-arrow-forward" style="color: rgb(0,0,0);"></i>
             </button>
+        </div>
+        <div *ngIf="datosUsuarioYRefugio" class="row" style="margin-right: 0px;margin-left: 0px;">
+            <div class="col text-center">
+                <h1 style="color: rgb(255,126,183);">Sos voluntario del refugio "{{datosUsuarioYRefugio.data.refugio.refugio_nombre}}"</h1>
+            </div>
         </div>
     </section>
 </main>

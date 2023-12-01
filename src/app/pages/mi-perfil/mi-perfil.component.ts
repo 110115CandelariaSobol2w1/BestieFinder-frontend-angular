@@ -10,6 +10,8 @@ import { MiPerfilService } from 'src/app/services/mi-perfil.service';
 export class MiPerfilComponent implements OnInit {
 
   usuario:any;
+  perteneceARefugio: boolean | undefined;
+  datosUsuarioYRefugio: any;
 
   constructor(private miServicio: MiPerfilService, private router: Router) {}
 
@@ -23,6 +25,9 @@ export class MiPerfilComponent implements OnInit {
         console.log(data);
         this.usuario = data;
         console.log(this.usuario.data.nombre)
+
+        this.obtenerUsuarioVoluntario();
+        this.obtenerRefugioUsuario();
       });
     } else {
       // Maneja la falta de token, por ejemplo, redirigiendo al usuario a la página de inicio de sesión
@@ -30,5 +35,18 @@ export class MiPerfilComponent implements OnInit {
     }
   }
 
+  obtenerUsuarioVoluntario() {
+    this.miServicio.usuarioVoluntario().subscribe(response => {
+      console.log(response);
+      this.perteneceARefugio = response; // Asigna el valor de respuesta a la variable perteneceARefugio
+    });
+  }
+
+  obtenerRefugioUsuario(){
+    this.miServicio.usuarioRefugio().subscribe(response => {
+      console.log(response);
+      this.datosUsuarioYRefugio = response;
+    })
+  }
 
 }
