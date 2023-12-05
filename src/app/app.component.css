@@ -5,7 +5,34 @@ body {
     margin: 0;
 }
 
-.sticky-footer {
+/* .sticky-footer {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+} */
+
+/* Estilos para el app.component */
+
+/* Asegura que el contenido ocupe al menos toda la altura de la pantalla */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Establece el diseño de flexbox para el app.component */
+app-root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Configuración para el main content */
+main {
+    flex: 1;
+}
+
+/* Estilos para el footer sticky */
+footer.sticky-footer {
     position: sticky;
     bottom: 0;
     width: 100%;

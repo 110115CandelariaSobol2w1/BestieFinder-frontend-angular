@@ -20,4 +20,12 @@ export class DonacionesService {
   donacionesGrafico(): Observable<any> {
     return this.http.get('http://localhost:3000/payments/donaciones');
   }
+
+  publicacionesGrafico(): Observable<any>{
+    return this.http.get('http://localhost:3000/publicaciones/agrupadas');
+  }
+
+  publicacionesEstadoGrafico(): Observable<any>{
+    return this.http.get('http://localhost:3000/publicaciones/agrupadas/estado');
+  }
 }

@@ -51,7 +51,7 @@
                     </ul>
                 </li>
                 <li class="nav-item"><a class="nav-link" href="#" [routerLink]="(authService.estaAutenticado | async) ? ['/donar'] : ['/iniciar-sesion']">Donar</a></li>
-                <li *ngIf="!esPropietarioRefugio" class="nav-item dropdown">
+                <li *ngIf="(authService.loggedIn | async) && !(authService.esPropietario() | async)" class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="turnosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Turnos
                     </a>
