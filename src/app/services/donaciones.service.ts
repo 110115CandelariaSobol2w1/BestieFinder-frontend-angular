@@ -16,4 +16,8 @@ export class DonacionesService {
   donacionesRefugio(): Observable<any>{
     return this.http.get('http://localhost:3000/payments/refugio');
   }
+
+  donacionesGrafico(): Observable<any> {
+    return this.http.get('http://localhost:3000/payments/donaciones');
+  }
 }

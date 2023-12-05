@@ -36,6 +36,7 @@ import { DonacionesRefugioComponent } from './pages/donaciones-refugio/donacione
 import { VerMascotasPerdidasComponent } from './pages/ver-mascotas-perdidas/ver-mascotas-perdidas.component';
 import { VerMascotasEncontradasComponent } from './pages/ver-mascotas-encontradas/ver-mascotas-encontradas.component';
 import { PerfilOwnerMascotaComponent } from './pages/perfil-owner-mascota/perfil-owner-mascota.component';
+import { GraficosComponent } from './pages/graficos/graficos.component';
 
 @NgModule({
   declarations: [
@@ -68,14 +69,15 @@ import { PerfilOwnerMascotaComponent } from './pages/perfil-owner-mascota/perfil
     DonacionesRefugioComponent,
     VerMascotasPerdidasComponent,
     VerMascotasEncontradasComponent,
-    PerfilOwnerMascotaComponent
+    PerfilOwnerMascotaComponent,
+    GraficosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [AuthService,
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi:true}
