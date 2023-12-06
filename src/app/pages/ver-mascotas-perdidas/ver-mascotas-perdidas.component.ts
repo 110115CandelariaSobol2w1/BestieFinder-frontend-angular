@@ -48,13 +48,13 @@ export class VerMascotasPerdidasComponent implements OnInit {
         break;
       default:
         // Si no se selecciona un filtro válido, obtener todas las mascotas
-        this.myService.obtenerMascotasAdopcion();
+        this.myService.obtenerMascotasPerdidas();
         break;
     }
   }
 
   obtenerMascotas(){
-    this.myService.obtenerMascotasAdopcion().subscribe(data => {
+    this.myService.obtenerMascotasPerdidas().subscribe(data => {
       console.log(data);
       this.mascotas = data.data;
     })

@@ -11,6 +11,7 @@ import { PublicacionesService } from 'src/app/services/publicaciones.service';
 export class CrearPublicacionComponent implements OnInit {
 
   form!: FormGroup;
+  imageUrl: string | ArrayBuffer | null = null;
 
   constructor(private fromBuilder: FormBuilder, private miServicio: PublicacionesService) {
     this.form = this.fromBuilder.group({
@@ -28,7 +29,7 @@ export class CrearPublicacionComponent implements OnInit {
       publicacion_descripcion: [''],
       publicacion_ubicacion: [''],
       publicacion_fecha: [''],
-      publicacion_photo: ['']
+      //publicacion_photo: ['']
     });
 
     this.form.get('animal_sexo')?.valueChanges.subscribe((value) => {
@@ -70,6 +71,36 @@ export class CrearPublicacionComponent implements OnInit {
     });
    }
 
+   selectFile(): void {
+    const fileInput = document.getElementById('inputFile');
+    fileInput?.click(); // Simula un clic en el input de tipo archivo
+  }
+
+  onFileSelected(event: Event): void {
+    const fileInput = event.target as HTMLInputElement;
+    const file = fileInput?.files?.[0];
+
+    if (file) {
+      this.convertToBase64(file);
+    }
+  }
+
+  convertToBase64(file: File): void {
+    const reader = new FileReader();
+
+    reader.onload = (event) => {
+      const base64Data = reader.result?.toString().split(',')[1];
+      console.log(base64Data) // Obtener la cadena base64 después de la coma
+
+      if (base64Data) {
+        this.imageUrl = reader.result; // Actualizar la imagen para mostrarla en la interfaz
+        this.form.patchValue({ photo: base64Data }); // Actualizar el valor del formulario
+      }
+    };
+
+    reader.readAsDataURL(file);
+  }
+
    crearPublicacion(){
     if(this.form.valid){
       let animal_name: string = this.form.get('animal_name')?.value;
@@ -78,7 +109,7 @@ export class CrearPublicacionComponent implements OnInit {
       let animal_color: string = this.form.get('animal_color')?.value;
       let animal_sexo: string = this.form.get('animal_sexo')?.value;
       let animal_descripcion: string = this.form.get('animal_descripcion')?.value;
-      let animal_photo: string = this.form.get('animal_photo')?.value;
+      let animal_photo: string | null = this.imageUrl as string | null;
       let animal_personalidad: string = this.form.get('animal_personalidad')?.value;
       let animal_patio: string = this.form.get('animal_patio')?.value;
       let animal_estado: number = this.form.get('animal_estado')?.value;
@@ -86,7 +117,13 @@ export class CrearPublicacionComponent implements OnInit {
       let publicacion_descripcion: string = this.form.get('publicacion_descripcion')?.value;
       let publicacion_ubicacion: string = this.form.get('publicacion_ubicacion')?.value;
       let publicacion_fecha: Date = this.form.get('publicacion_fecha')?.value;
-      let publicacion_photo: string = this.form.get('publicacion_photo')?.value;
+      let publicacion_photo: string | null = animal_photo;
+      if (animal_photo === null) {
+        animal_photo = ''; // Asigna una cadena vacía o un valor por defecto en lugar de null
+      }
+      if (publicacion_photo === null) {
+        publicacion_photo = ''; // Asigna una cadena vacía o un valor por defecto en lugar de null
+      }
       let publicacion: Publicacion = new Publicacion(animal_name,animal_raza,animal_edad,animal_color,animal_sexo,animal_descripcion,animal_photo,animal_personalidad,animal_patio,animal_estado,animal_tipo,publicacion_descripcion,publicacion_ubicacion,publicacion_fecha,publicacion_photo);
 
       this.miServicio.crearPublicacion(publicacion).subscribe({

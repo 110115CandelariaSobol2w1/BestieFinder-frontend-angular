@@ -53,7 +53,7 @@ export class VerMascotasEncontradasComponent implements OnInit {
   }
 
   obtenerMascotas() {
-    this.myService.obtenerGatosEncontrados().subscribe((data) => {
+    this.myService.obtenerMascotasEncontradas().subscribe((data) => {
       console.log(data);
       this.mascotas = data.data;
     });

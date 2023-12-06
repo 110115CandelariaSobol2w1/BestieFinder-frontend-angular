@@ -17,7 +17,7 @@
     <div *ngFor="let mascota of mascotas" class="col-sm-6 col-md-4 product-item" style="margin: 20px; border: #b6c4ff;">
         <div class="product-container">
             <div class="row">
-                <div class="col-md-12"><a class="product-image" href="#"><img style="height: 130px;" [src]="'data:image/jpeg;base64,' + mascota.animal.animal_photo"></a></div>
+                <div class="col-md-12"><a class="product-image" href="#"><img style="height: 130px;" [src]="mascota.animal.animal_photo"></a></div>
             </div>
             <div class="row">
                 <div class="col-8">
