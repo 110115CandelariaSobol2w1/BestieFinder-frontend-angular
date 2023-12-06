@@ -11,6 +11,7 @@ import { CrearRefugioService } from 'src/app/services/crear-refugio.service';
 })
 export class CrearRefugioComponent implements OnInit {
   form!: FormGroup;
+  imageUrl: string | ArrayBuffer | null = null;
 
   constructor(private fromBuilder: FormBuilder, private miServicio: CrearRefugioService, private router: Router) {
     this.form = this.fromBuilder.group({
@@ -32,6 +33,39 @@ export class CrearRefugioComponent implements OnInit {
     });
   }
 
+  
+  ngOnInit(): void {}
+
+  selectFile(): void {
+    const fileInput = document.getElementById('inputFile');
+    fileInput?.click(); // Simula un clic en el input de tipo archivo
+  }
+
+  onFileSelected(event: Event): void {
+    const fileInput = event.target as HTMLInputElement;
+    const file = fileInput?.files?.[0];
+
+    if (file) {
+      this.convertToBase64(file);
+    }
+  }
+
+  convertToBase64(file: File): void {
+    const reader = new FileReader();
+
+    reader.onload = (event) => {
+      const base64Data = reader.result?.toString().split(',')[1];
+      console.log(base64Data) // Obtener la cadena base64 después de la coma
+
+      if (base64Data) {
+        this.imageUrl = reader.result; // Actualizar la imagen para mostrarla en la interfaz
+        this.form.patchValue({ photo: base64Data }); // Actualizar el valor del formulario
+      }
+    };
+
+    reader.readAsDataURL(file);
+  }
+
   crearRefugio(){
     if(this.form.valid){
       let nombre: string = this.form.get('nombre')?.value;
@@ -42,7 +76,11 @@ export class CrearRefugioComponent implements OnInit {
       let informacion: string = this.form.get('informacion')?.value;
       let castraciones: boolean = this.form.get('castraciones')?.value;
       let userRole: string = 'owner';
-      let refugio: Refugio = new Refugio(nombre,pais,provincia,ciudad,telefono,informacion,castraciones,userRole);
+      let photo: string | null = this.imageUrl as string | null;
+      if (photo === null) {
+        photo = ''; // Asigna una cadena vacía o un valor por defecto en lugar de null
+      }
+      let refugio: Refugio = new Refugio(nombre,pais,provincia,ciudad,telefono,informacion,castraciones,userRole, photo);
 
       this.miServicio.crearRefugio(refugio).subscribe({
         next: (v) => {
@@ -56,6 +94,4 @@ export class CrearRefugioComponent implements OnInit {
     
     }
   }
-
-  ngOnInit(): void {}
 }

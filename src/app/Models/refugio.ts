@@ -7,8 +7,9 @@ export class Refugio {
     private refugio_descripcion:string;
     private refugio_castraciones:boolean;
     private ref_user_rol:string;
+    private refugio_photo: string;
 
-    constructor(refugio_nombre:string,refugio_pais:string,refugio_provincia:string, refugio_ciudad:string,refugio_telefono:string,refugio_descripcion:string, refugio_castraciones:boolean, ref_user_rol:string){
+    constructor(refugio_nombre:string,refugio_pais:string,refugio_provincia:string, refugio_ciudad:string,refugio_telefono:string,refugio_descripcion:string, refugio_castraciones:boolean, ref_user_rol:string, refugio_photo:string){
         this.refugio_nombre = refugio_nombre;
         this.refugio_pais = refugio_pais;
         this.refugio_provincia = refugio_provincia;
@@ -17,6 +18,7 @@ export class Refugio {
         this.refugio_descripcion = refugio_descripcion;
         this.refugio_castraciones = refugio_castraciones;
         this.ref_user_rol = ref_user_rol;
+        this.refugio_photo = refugio_photo;
     }
 
     get getNombre(): string {
