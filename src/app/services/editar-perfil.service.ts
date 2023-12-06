@@ -32,6 +32,11 @@ export class EditarPerfilService {
     // Realiza la solicitud HTTP solo con los campos que se actualizarán
     return this.http.patch('http://localhost:3000/users/id', dataToUpdate);
   }
+
+  // editarPerfil(nuevoPerfil: FormData): Observable<any> {
+  //   return this.http.patch('http://localhost:3000/users/id', nuevoPerfil);
+  // }
+  
 }
   
   

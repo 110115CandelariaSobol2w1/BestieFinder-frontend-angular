@@ -7,7 +7,12 @@
         <div class="card-body">
             <form [formGroup]="formEditar">
                 <div class="row" style="margin-bottom: 25px;text-align: left;">
-                    <div class="col-sm-4 col-md-4 col-lg-3 col-xl-2 col-xxl-2" style="display: inline;text-align: center;margin-bottom: 25px;"><img class="rounded-circle mb-3 mt-4 img-fluid" src="assets/1683338381655.jpg" style="display: inline;max-height: 110px;"><br><button class="btn btn-primary btn-sm" id="photoBtn" type="button">Cambiar Foto</button></div>
+                    <input type="file" id="inputFile" style="display: none;" (change)="onFileSelected($event)">
+                    <div class="col-sm-4 col-md-4 col-lg-3 col-xl-2 col-xxl-2" style="display: inline;text-align: center;margin-bottom: 25px;">
+                        <img class="rounded-circle mb-3 mt-4 img-fluid" [src]="imageUrl" style="display: inline;max-height: 110px;"><br>
+                        <button class="btn btn-primary btn-sm" id="photoBtn" type="button" (click)="selectFile()">Cambiar Foto</button>
+                    </div>
+
                     <div class="col-sm-8 col-md-8 col-lg-9 col-xl-10 col-xxl-10 align-self-center">
                         <div class="row">
                             <div class="col-md-12 text-start">

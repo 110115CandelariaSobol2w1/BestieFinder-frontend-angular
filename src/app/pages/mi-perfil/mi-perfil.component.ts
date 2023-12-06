@@ -24,7 +24,7 @@ export class MiPerfilComponent implements OnInit {
       this.miServicio.miPerfil().subscribe(data => {
         console.log(data);
         this.usuario = data;
-        console.log(this.usuario.data.nombre)
+        console.log(this.usuario.data)
 
         this.obtenerUsuarioVoluntario();
         this.obtenerRefugioUsuario();
