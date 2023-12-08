@@ -28,6 +28,7 @@ import { PerfilOwnerMascotaComponent } from './pages/perfil-owner-mascota/perfil
 import { VerMascotasPerdidasComponent } from './pages/ver-mascotas-perdidas/ver-mascotas-perdidas.component';
 import { VerMascotasEncontradasComponent } from './pages/ver-mascotas-encontradas/ver-mascotas-encontradas.component';
 import { GraficosComponent } from './pages/graficos/graficos.component';
+import { FaqsComponent } from './pages/faqs/faqs.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -59,7 +60,8 @@ const routes: Routes = [
   {path: 'informacion-mascota/:idUsuario', component: PerfilOwnerMascotaComponent},
   {path: 'mascotas-perdidas', component: VerMascotasPerdidasComponent},
   {path: 'mascotas-encontradas', component: VerMascotasEncontradasComponent},
-  {path: 'graficos', component: GraficosComponent}
+  {path: 'graficos', component: GraficosComponent},
+  {path: 'faqs', component: FaqsComponent}
 ];
 
 @NgModule({

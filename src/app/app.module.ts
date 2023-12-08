@@ -37,6 +37,7 @@ import { VerMascotasPerdidasComponent } from './pages/ver-mascotas-perdidas/ver-
 import { VerMascotasEncontradasComponent } from './pages/ver-mascotas-encontradas/ver-mascotas-encontradas.component';
 import { PerfilOwnerMascotaComponent } from './pages/perfil-owner-mascota/perfil-owner-mascota.component';
 import { GraficosComponent } from './pages/graficos/graficos.component';
+import { FaqsComponent } from './pages/faqs/faqs.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { GraficosComponent } from './pages/graficos/graficos.component';
     VerMascotasPerdidasComponent,
     VerMascotasEncontradasComponent,
     PerfilOwnerMascotaComponent,
-    GraficosComponent
+    GraficosComponent,
+    FaqsComponent
   ],
   imports: [
     BrowserModule,
