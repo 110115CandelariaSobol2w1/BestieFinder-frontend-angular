@@ -22,6 +22,7 @@ export class SignupComponent implements OnInit {
       apellido: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
+      aceptoTerminos: [false, Validators.requiredTrue],
     });
     
   }
@@ -30,6 +31,10 @@ export class SignupComponent implements OnInit {
 
   registro() {
     if (this.formRegistro.valid) {
+      if (!this.formRegistro.get('aceptoTerminos')?.value) {
+        alert('Por favor, acepta los términos y condiciones');
+        return; // Detiene el proceso de registro si el checkbox no está marcado
+      }
       let nombre: string = this.formRegistro.get('nombre')?.value;
       let apellido: string = this.formRegistro.get('apellido')?.value;
       let email: string = this.formRegistro.get('email')?.value;
@@ -55,5 +60,9 @@ export class SignupComponent implements OnInit {
 
   redireccionLogin(){
     this.router.navigate(['iniciar-sesion']);
+  }
+
+  mostrarTerminos() {
+    window.open('assets/terminos.txt', 'Términos y Condiciones', 'width=600,height=400');
   }
 }
