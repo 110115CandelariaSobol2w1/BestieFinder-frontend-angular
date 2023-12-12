@@ -29,6 +29,9 @@ import { VerMascotasPerdidasComponent } from './pages/ver-mascotas-perdidas/ver-
 import { VerMascotasEncontradasComponent } from './pages/ver-mascotas-encontradas/ver-mascotas-encontradas.component';
 import { GraficosComponent } from './pages/graficos/graficos.component';
 import { FaqsComponent } from './pages/faqs/faqs.component';
+import { GraficosInicioComponent } from './pages/graficos-inicio/graficos-inicio.component';
+import { GraficoPublicacionesComponent } from './pages/grafico-publicaciones/grafico-publicaciones.component';
+import { GraficoPublicacionesEstadoComponent } from './pages/grafico-publicaciones-estado/grafico-publicaciones-estado.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -61,7 +64,10 @@ const routes: Routes = [
   {path: 'mascotas-perdidas', component: VerMascotasPerdidasComponent},
   {path: 'mascotas-encontradas', component: VerMascotasEncontradasComponent},
   {path: 'graficos', component: GraficosComponent},
-  {path: 'faqs', component: FaqsComponent}
+  {path: 'faqs', component: FaqsComponent},
+  {path: 'graficos-inicio', component: GraficosInicioComponent},
+  {path: 'graficos-publicaciones', component: GraficoPublicacionesComponent},
+  {path: 'graficos-publicaciones-estado', component: GraficoPublicacionesEstadoComponent}
 ];
 
 @NgModule({

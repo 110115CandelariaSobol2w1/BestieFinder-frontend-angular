@@ -1,0 +1,17 @@
+element.style {
+    background: rgb(255,126,183);
+    color: white;
+  }
+
+.icono {
+    width: 40px;
+    height: 40px;
+}
+
+.bs-icon.bs-icon-rounded {
+    border-radius: .5rem;
+  }
+  
+  
+
+      

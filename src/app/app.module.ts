@@ -38,6 +38,9 @@ import { VerMascotasEncontradasComponent } from './pages/ver-mascotas-encontrada
 import { PerfilOwnerMascotaComponent } from './pages/perfil-owner-mascota/perfil-owner-mascota.component';
 import { GraficosComponent } from './pages/graficos/graficos.component';
 import { FaqsComponent } from './pages/faqs/faqs.component';
+import { GraficosInicioComponent } from './pages/graficos-inicio/graficos-inicio.component';
+import { GraficoPublicacionesComponent } from './pages/grafico-publicaciones/grafico-publicaciones.component';
+import { GraficoPublicacionesEstadoComponent } from './pages/grafico-publicaciones-estado/grafico-publicaciones-estado.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +75,10 @@ import { FaqsComponent } from './pages/faqs/faqs.component';
     VerMascotasEncontradasComponent,
     PerfilOwnerMascotaComponent,
     GraficosComponent,
-    FaqsComponent
+    FaqsComponent,
+    GraficosInicioComponent,
+    GraficoPublicacionesComponent,
+    GraficoPublicacionesEstadoComponent
   ],
   imports: [
     BrowserModule,
